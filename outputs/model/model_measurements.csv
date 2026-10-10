@@ -1,0 +1,3 @@
+model,device,load_seconds,inference_seconds,rss_before_mb,rss_after_mb,records
+ProsusAI/finbert,mps,29.60598087499966,0.739294915983919,253.296875,322.1875,12
+Qwen/Qwen2.5-1.5B-Instruct,mps,131.15681945800316,273.58165916698636,483.625,365.53125,12

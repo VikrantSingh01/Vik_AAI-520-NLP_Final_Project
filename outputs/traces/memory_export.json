@@ -1,0 +1,58 @@
+{
+  "memory_records": [
+    "mapping:AAPL:capital_expenditures:PaymentsToAcquirePropertyPlantAndEquipment",
+    "mapping:AAPL:net_income:NetIncomeLoss",
+    "mapping:AAPL:operating_cash_flow:NetCashProvidedByUsedInOperatingActivities",
+    "mapping:AAPL:operating_income:OperatingIncomeLoss",
+    "mapping:AAPL:research_and_development:ResearchAndDevelopmentExpense",
+    "mapping:AAPL:revenue:RevenueFromContractWithCustomerExcludingAssessedTax",
+    "mapping:AMZN:capital_expenditures:PaymentsToAcquireProductiveAssets",
+    "mapping:AMZN:net_income:NetIncomeLoss",
+    "mapping:AMZN:operating_cash_flow:NetCashProvidedByUsedInOperatingActivities",
+    "mapping:AMZN:operating_income:OperatingIncomeLoss",
+    "mapping:AMZN:revenue:RevenueFromContractWithCustomerExcludingAssessedTax",
+    "mapping:GOOGL:capital_expenditures:PaymentsToAcquirePropertyPlantAndEquipment",
+    "mapping:GOOGL:net_income:NetIncomeLoss",
+    "mapping:GOOGL:operating_cash_flow:NetCashProvidedByUsedInOperatingActivities",
+    "mapping:GOOGL:operating_income:OperatingIncomeLoss",
+    "mapping:GOOGL:research_and_development:ResearchAndDevelopmentExpense",
+    "mapping:GOOGL:revenue:Revenues",
+    "mapping:META:capital_expenditures:PaymentsToAcquirePropertyPlantAndEquipment",
+    "mapping:META:net_income:NetIncomeLoss",
+    "mapping:META:operating_cash_flow:NetCashProvidedByUsedInOperatingActivities",
+    "mapping:META:operating_income:OperatingIncomeLoss",
+    "mapping:META:research_and_development:ResearchAndDevelopmentExpense",
+    "mapping:META:revenue:RevenueFromContractWithCustomerExcludingAssessedTax",
+    "mapping:MSFT:capital_expenditures:PaymentsToAcquirePropertyPlantAndEquipment",
+    "mapping:MSFT:net_income:NetIncomeLoss",
+    "mapping:MSFT:operating_cash_flow:NetCashProvidedByUsedInOperatingActivities",
+    "mapping:MSFT:operating_income:OperatingIncomeLoss",
+    "mapping:MSFT:research_and_development:ResearchAndDevelopmentExpense",
+    "mapping:MSFT:revenue:RevenueFromContractWithCustomerExcludingAssessedTax",
+    "mapping:NFLX:capital_expenditures:PaymentsToAcquirePropertyPlantAndEquipment",
+    "mapping:NFLX:net_income:NetIncomeLoss",
+    "mapping:NFLX:operating_cash_flow:NetCashProvidedByUsedInOperatingActivities",
+    "mapping:NFLX:operating_income:OperatingIncomeLoss",
+    "mapping:NFLX:research_and_development:ResearchAndDevelopmentExpense",
+    "mapping:NFLX:revenue:Revenues",
+    "lesson:Preserve citations and calibrated uncertainty"
+  ],
+  "run_history": [
+    [
+      "546c29874cc94f64",
+      "Compare FAANG+M and identify the largest gaps between AI narrative, capital commitment, cash-flow support, news sentiment, and market reaction.",
+      100.0,
+      1,
+      1,
+      "2026-09-07T23:47:52.136214+00:00"
+    ],
+    [
+      "bf0f767312b80168",
+      "Compare FAANG+M and identify the largest gaps between AI narrative, capital commitment, cash-flow support, news sentiment, and market reaction.",
+      100.0,
+      1,
+      1,
+      "2026-09-07T23:47:52.358974+00:00"
+    ]
+  ]
+}

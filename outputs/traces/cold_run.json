@@ -1,0 +1,4232 @@
+{
+  "query": "Compare FAANG+M and identify the largest gaps between AI narrative, capital commitment, cash-flow support, news sentiment, and market reaction.",
+  "companies": [
+    "META",
+    "AAPL",
+    "AMZN",
+    "NFLX",
+    "GOOGL",
+    "MSFT"
+  ],
+  "plan": [
+    {
+      "step_id": "P1",
+      "objective": "Collect and normalize primary-source financial evidence",
+      "agent": "filing_specialist",
+      "candidate_tools": [
+        "sec_companyfacts",
+        "sec_filing_text",
+        "validated_memory"
+      ],
+      "selected_tool": "sec_companyfacts",
+      "dependencies": [],
+      "success_criteria": "Every displayed metric has a period, concept, accession, and URL",
+      "fallback": "Use cached SEC snapshot and report non-comparable concepts",
+      "status": "complete"
+    },
+    {
+      "step_id": "P2",
+      "objective": "Run the five-stage news chain",
+      "agent": "news_specialist",
+      "candidate_tools": [
+        "yahoo_news",
+        "news_chain"
+      ],
+      "selected_tool": "news_chain",
+      "dependencies": [
+        "P1"
+      ],
+      "success_criteria": "Every accepted summary completes all five stages",
+      "fallback": "Use cached metadata and lexical classification",
+      "status": "complete"
+    },
+    {
+      "step_id": "P3",
+      "objective": "Measure risk, return, and benchmark-relative confirmation",
+      "agent": "market_specialist",
+      "candidate_tools": [
+        "yahoo_prices",
+        "market_analytics"
+      ],
+      "selected_tool": "market_analytics",
+      "dependencies": [
+        "P1"
+      ],
+      "success_criteria": "Common-window prices and QQQ benchmark are present",
+      "fallback": "Use frozen price snapshot and disclose missing dates",
+      "status": "complete"
+    },
+    {
+      "step_id": "P4",
+      "objective": "Compare FAANG+M AI narrative",
+      "agent": "narrative_specialist",
+      "candidate_tools": [
+        "narrative_comparison"
+      ],
+      "selected_tool": "narrative_comparison",
+      "dependencies": [
+        "P1"
+      ],
+      "success_criteria": "Narrative comparison is complete and FAANG+M AI narrative is compared",
+      "fallback": "Use cached narrative data and compare against the latest available information",
+      "status": "complete"
+    },
+    {
+      "step_id": "P5",
+      "objective": "Synthesize, evaluate, and revise the evidence-linked report",
+      "agent": "supervisor",
+      "candidate_tools": [
+        "synthesizer",
+        "evaluator",
+        "memory"
+      ],
+      "selected_tool": "evaluator_optimizer",
+      "dependencies": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "success_criteria": "No critical unsupported claim and all objectives addressed",
+      "fallback": "Deliver a marked partial report with failed checks",
+      "status": "complete"
+    }
+  ],
+  "routes": [
+    {
+      "item_id": "SEC-META-10-K-0001628280-26-003942",
+      "route": "filing",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "SEC source or filing form",
+      "required_tools": [
+        "filing_retrieval",
+        "xbrl_lookup"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "SEC-META-10-Q-0001628280-26-050705",
+      "route": "filing",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "SEC source or filing form",
+      "required_tools": [
+        "filing_retrieval",
+        "xbrl_lookup"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-META-68783d5edaa0",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-META-0762258e2ed6",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-META-940aac21ef3c",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-META-7745dc75565c",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-META-a56be29b5c65",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-META-d8c04ea161e6",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "SEC-AAPL-10-K-0000320193-25-000079",
+      "route": "filing",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "SEC source or filing form",
+      "required_tools": [
+        "filing_retrieval",
+        "xbrl_lookup"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "SEC-AAPL-10-Q-0000320193-26-000020",
+      "route": "filing",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "SEC source or filing form",
+      "required_tools": [
+        "filing_retrieval",
+        "xbrl_lookup"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-AAPL-68783d5edaa0",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-AAPL-ab132d1f94c8",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-AAPL-a1dcd6626d29",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-AAPL-0fbfaaf255bb",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-AAPL-0762258e2ed6",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-AAPL-98e33dc16473",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "SEC-AMZN-10-K-0001018724-26-000004",
+      "route": "filing",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "SEC source or filing form",
+      "required_tools": [
+        "filing_retrieval",
+        "xbrl_lookup"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "SEC-AMZN-10-Q-0001018724-26-000026",
+      "route": "filing",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "SEC source or filing form",
+      "required_tools": [
+        "filing_retrieval",
+        "xbrl_lookup"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-AMZN-5fed3966a914",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-AMZN-087289eb5184",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-AMZN-9530afb52713",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-AMZN-69d3c4bd6fdb",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-AMZN-0762258e2ed6",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-AMZN-01a2db31d003",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "SEC-NFLX-10-K-0001065280-26-000034",
+      "route": "filing",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "SEC source or filing form",
+      "required_tools": [
+        "filing_retrieval",
+        "xbrl_lookup"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "SEC-NFLX-10-Q-0001065280-26-000212",
+      "route": "filing",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "SEC source or filing form",
+      "required_tools": [
+        "filing_retrieval",
+        "xbrl_lookup"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-NFLX-99d39485a13b",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-NFLX-9c821a376a07",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-NFLX-b8a6366cdb9c",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-NFLX-6ae9d32b48c7",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-NFLX-c272c480ce2a",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-NFLX-861b0cebab53",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "SEC-GOOGL-10-K-0001652044-26-000018",
+      "route": "filing",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "SEC source or filing form",
+      "required_tools": [
+        "filing_retrieval",
+        "xbrl_lookup"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "SEC-GOOGL-10-Q-0001652044-26-000071",
+      "route": "filing",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "SEC source or filing form",
+      "required_tools": [
+        "filing_retrieval",
+        "xbrl_lookup"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-GOOGL-21520da8855d",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-GOOGL-172c3b4e32f0",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-GOOGL-a19722b5221d",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-GOOGL-7745dc75565c",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-GOOGL-bb9a54929d80",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-GOOGL-952d26452bd0",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "SEC-MSFT-10-K-0001193125-26-323660",
+      "route": "filing",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "SEC source or filing form",
+      "required_tools": [
+        "filing_retrieval",
+        "xbrl_lookup"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "SEC-MSFT-10-Q-0001193125-26-191507",
+      "route": "filing",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "SEC source or filing form",
+      "required_tools": [
+        "filing_retrieval",
+        "xbrl_lookup"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-MSFT-21520da8855d",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-MSFT-68783d5edaa0",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-MSFT-0762258e2ed6",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-MSFT-7a4bcf35113e",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-MSFT-7745dc75565c",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "NEWS-MSFT-2617353783e9",
+      "route": "news",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "News document metadata",
+      "required_tools": [
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "FACTS-GOOGL-2025",
+      "route": "mixed",
+      "secondary_route": null,
+      "confidence": 0.55,
+      "reason": "No single specialist dominates",
+      "required_tools": [
+        "filing_retrieval",
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "FACTS-AMZN-2025",
+      "route": "mixed",
+      "secondary_route": null,
+      "confidence": 0.55,
+      "reason": "No single specialist dominates",
+      "required_tools": [
+        "filing_retrieval",
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "FACTS-AAPL-2025",
+      "route": "mixed",
+      "secondary_route": null,
+      "confidence": 0.55,
+      "reason": "No single specialist dominates",
+      "required_tools": [
+        "filing_retrieval",
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "FACTS-META-2025",
+      "route": "mixed",
+      "secondary_route": null,
+      "confidence": 0.55,
+      "reason": "No single specialist dominates",
+      "required_tools": [
+        "filing_retrieval",
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "FACTS-NFLX-2025",
+      "route": "mixed",
+      "secondary_route": null,
+      "confidence": 0.55,
+      "reason": "No single specialist dominates",
+      "required_tools": [
+        "filing_retrieval",
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "FACTS-MSFT-2026",
+      "route": "mixed",
+      "secondary_route": null,
+      "confidence": 0.55,
+      "reason": "No single specialist dominates",
+      "required_tools": [
+        "filing_retrieval",
+        "news_chain"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "MARKET-AAPL",
+      "route": "market",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "Market data product",
+      "required_tools": [
+        "market_analytics"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "MARKET-AMZN",
+      "route": "market",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "Market data product",
+      "required_tools": [
+        "market_analytics"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "MARKET-GOOGL",
+      "route": "market",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "Market data product",
+      "required_tools": [
+        "market_analytics"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "MARKET-META",
+      "route": "market",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "Market data product",
+      "required_tools": [
+        "market_analytics"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "MARKET-MSFT",
+      "route": "market",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "Market data product",
+      "required_tools": [
+        "market_analytics"
+      ],
+      "used_fallback": true
+    },
+    {
+      "item_id": "MARKET-NFLX",
+      "route": "market",
+      "secondary_route": null,
+      "confidence": 0.98,
+      "reason": "Market data product",
+      "required_tools": [
+        "market_analytics"
+      ],
+      "used_fallback": true
+    }
+  ],
+  "news_stages": [
+    {
+      "evidence_id": "NEWS-META-68783d5edaa0",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Palantir Stock Leads August Rally -- Nvidia, Salesforce and Super Micro Jump",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/palantir-stock-leads-august-rally-215855985.html"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-META-68783d5edaa0",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Palantir Stock Leads August Rally -- Nvidia, Salesforce and Super Micro Jump. Palantir Crushes Tech Stocks in August: Salesforce Nears 40% Gain, Super Micro Jumps",
+        "character_count": 162
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-META-68783d5edaa0",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "earnings_financials",
+        "topic_scores": {
+          "earnings_financials": 1,
+          "ai_capex_cloud": 1,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "positive",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "positive"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-META-68783d5edaa0",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "META"
+        ],
+        "event": "Palantir Stock Leads August Rally -- Nvidia, Salesforce and Super Micro Jump",
+        "numeric_mentions": [
+          "40%"
+        ],
+        "catalyst_or_risk": "catalyst",
+        "time_horizon": "recent",
+        "sentiment": "positive",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-META-68783d5edaa0"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-META-68783d5edaa0",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "META: Palantir Stock Leads August Rally -- Nvidia, Salesforce and Super Micro Jump [positive; earnings_financials]",
+        "evidence_ids": [
+          "NEWS-META-68783d5edaa0"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-META-0762258e2ed6",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "How a 64-Year-Old\u2019s $1.2 Million in VOO Turned Into a $456,000 Bet on a Single Sector",
+        "url": "https://247wallst.com/investing/etf/2026/09/07/how-a-64-year-olds-1-2-million-in-voo-turned-into-a-456000-bet-on-a-single-sector/"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-META-0762258e2ed6",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "How a 64-Year-Old\u2019s $1.2 Million in VOO Turned Into a $456,000 Bet on a Single Sector. A $1.2 million position in Vanguard's most popular S&P 500 fund looks like broad diversification until you open the shareholder report and see where most of that money actually sits. For a 64-year-old counting on this portfolio for the next 30 years, the sector breakdown changes the risk calculation entirely.",
+        "character_count": 397
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-META-0762258e2ed6",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "other",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 0,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "neutral",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "negative"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-META-0762258e2ed6",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "META"
+        ],
+        "event": "How a 64-Year-Old\u2019s $1.2 Million in VOO Turned Into a $456,000 Bet on a Single Sector",
+        "numeric_mentions": [
+          "64",
+          "$1.2 Million",
+          "$456",
+          "000",
+          "$1.2 million",
+          "500",
+          "64",
+          "30"
+        ],
+        "catalyst_or_risk": "context",
+        "time_horizon": "recent",
+        "sentiment": "neutral",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-META-0762258e2ed6"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-META-0762258e2ed6",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "META: How a 64-Year-Old\u2019s $1.2 Million in VOO Turned Into a $456,000 Bet on a Single Sector [neutral; other]",
+        "evidence_ids": [
+          "NEWS-META-0762258e2ed6"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-META-940aac21ef3c",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Jim Cramer Says Meta (META) is \u201cAt the Price\u201d After Settlement Eases Major Legal Overhang",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-says-meta-meta-203146510.html"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-META-940aac21ef3c",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Jim Cramer Says Meta (META) is \u201cAt the Price\u201d After Settlement Eases Major Legal Overhang. During the September 3 episode of Mad Money, host Jim Cramer said Meta Platforms, Inc. (NASDAQ:META) had become \u201ca hated stock,\u201d as he said: Next, okay, here\u2019s one. Maybe the cheapest of all. I\u2019m going to walk you through this one. It\u2019s a hated stock, but I\u2019m going to walk you through it. It\u2019s called [\u2026]",
+        "character_count": 396
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-META-940aac21ef3c",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "ai_capex_cloud",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 1,
+          "product_strategy": 0,
+          "regulatory_legal": 1,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "negative",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-META-940aac21ef3c",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "meta",
+          "meta platforms"
+        ],
+        "event": "Jim Cramer Says Meta (META) is \u201cAt the Price\u201d After Settlement Eases Major Legal Overhang",
+        "numeric_mentions": [
+          "3"
+        ],
+        "catalyst_or_risk": "risk",
+        "time_horizon": "recent",
+        "sentiment": "negative",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-META-940aac21ef3c"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-META-940aac21ef3c",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "META: Jim Cramer Says Meta (META) is \u201cAt the Price\u201d After Settlement Eases Major Legal Overhang [negative; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-META-940aac21ef3c"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-META-7745dc75565c",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Nvidia, Microsoft at Center of $7 Trillion AI Boom",
+        "url": "https://finance.yahoo.com/technology/ai/articles/nvidia-microsoft-center-7-trillion-192652924.html"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-META-7745dc75565c",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Nvidia, Microsoft at Center of $7 Trillion AI Boom. An unprecedented construction wave could reshape AI's biggest stock-market winners",
+        "character_count": 134
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-META-7745dc75565c",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "ai_capex_cloud",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 1,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 1
+        },
+        "sentiment": "positive",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-META-7745dc75565c",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "META"
+        ],
+        "event": "Nvidia, Microsoft at Center of $7 Trillion AI Boom",
+        "numeric_mentions": [
+          "$7 Trillion"
+        ],
+        "catalyst_or_risk": "catalyst",
+        "time_horizon": "recent",
+        "sentiment": "positive",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-META-7745dc75565c"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-META-7745dc75565c",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "META: Nvidia, Microsoft at Center of $7 Trillion AI Boom [positive; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-META-7745dc75565c"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-META-a56be29b5c65",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "AMD Is Behind The AI Chip Shift Nobody Is Talking About",
+        "url": "https://247wallst.com/investing/2026/09/07/amd-is-behind-the-ai-chip-shift-nobody-is-talking-about/"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-META-a56be29b5c65",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "AMD Is Behind The AI Chip Shift Nobody Is Talking About. AMD and NVIDIA both posted explosive AI quarters, but they are betting on opposite visions of how the AI economy will actually be won. One of those visions fits the next phase of the buildout far better than the market currently appreciates.",
+        "character_count": 298
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-META-a56be29b5c65",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "macro_market",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 1,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 2
+        },
+        "sentiment": "neutral",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-META-a56be29b5c65",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "META"
+        ],
+        "event": "AMD Is Behind The AI Chip Shift Nobody Is Talking About",
+        "numeric_mentions": [],
+        "catalyst_or_risk": "context",
+        "time_horizon": "recent",
+        "sentiment": "neutral",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-META-a56be29b5c65"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-META-a56be29b5c65",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "META: AMD Is Behind The AI Chip Shift Nobody Is Talking About [neutral; macro_market]",
+        "evidence_ids": [
+          "NEWS-META-a56be29b5c65"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-META-d8c04ea161e6",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Alphabet May Be the Mag 7 Stock Investors Are Underestimating",
+        "url": "https://247wallst.com/investing/2026/09/07/alphabet-may-be-the-mag-7-stock-investors-are-underestimating/"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-META-d8c04ea161e6",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Alphabet May Be the Mag 7 Stock Investors Are Underestimating. Google Cloud is growing at twice the rate of Azure while GOOG trades at half the valuation multiple, and the gap between perception and reality may be the biggest opportunity hiding in plain sight among mega-cap tech stocks.",
+        "character_count": 287
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-META-d8c04ea161e6",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "ai_capex_cloud",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 2,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "neutral",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-META-d8c04ea161e6",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "META"
+        ],
+        "event": "Alphabet May Be the Mag 7 Stock Investors Are Underestimating",
+        "numeric_mentions": [
+          "7"
+        ],
+        "catalyst_or_risk": "context",
+        "time_horizon": "recent",
+        "sentiment": "neutral",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-META-d8c04ea161e6"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-META-d8c04ea161e6",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "META: Alphabet May Be the Mag 7 Stock Investors Are Underestimating [neutral; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-META-d8c04ea161e6"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-ab132d1f94c8",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Apple's $54 Billion iPhone Engine Hits an AI Memory Squeeze",
+        "url": "https://finance.yahoo.com/technology/articles/apples-54-billion-iphone-engine-215612819.html"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-ab132d1f94c8",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Apple's $54 Billion iPhone Engine Hits an AI Memory Squeeze. AI servers are absorbing premium memory capacity while Apple tries to protect hardware margins.",
+        "character_count": 156
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-ab132d1f94c8",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "earnings_financials",
+        "topic_scores": {
+          "earnings_financials": 1,
+          "ai_capex_cloud": 1,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "negative",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-ab132d1f94c8",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "apple"
+        ],
+        "event": "Apple's $54 Billion iPhone Engine Hits an AI Memory Squeeze",
+        "numeric_mentions": [
+          "$54 Billion"
+        ],
+        "catalyst_or_risk": "risk",
+        "time_horizon": "recent",
+        "sentiment": "negative",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-AAPL-ab132d1f94c8"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-ab132d1f94c8",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "AAPL: Apple's $54 Billion iPhone Engine Hits an AI Memory Squeeze [negative; earnings_financials]",
+        "evidence_ids": [
+          "NEWS-AAPL-ab132d1f94c8"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-a1dcd6626d29",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Tim Cook Delivered a 2,720% Total Return Over 15 Years. Here's Whether John Ternus Can Do the Same for Apple Investors.",
+        "url": "https://www.fool.com/investing/2026/09/07/tim-cook-delivered-a-2720-total-return-over-15-yea/"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-a1dcd6626d29",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Tim Cook Delivered a 2,720% Total Return Over 15 Years. Here's Whether John Ternus Can Do the Same for Apple Investors.. Apple is facing some pressure, but there's a lot to be excited about.",
+        "character_count": 190
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-a1dcd6626d29",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "other",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 0,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "neutral",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-a1dcd6626d29",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "apple"
+        ],
+        "event": "Tim Cook Delivered a 2,720% Total Return Over 15 Years. Here's Whether John Ternus Can Do the Same for Apple Investors.",
+        "numeric_mentions": [
+          "2",
+          "720%",
+          "15"
+        ],
+        "catalyst_or_risk": "context",
+        "time_horizon": "recent",
+        "sentiment": "neutral",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-AAPL-a1dcd6626d29"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-a1dcd6626d29",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "AAPL: Tim Cook Delivered a 2,720% Total Return Over 15 Years. Here's Whether John Ternus Can Do the Same for Apple Investors. [neutral; other]",
+        "evidence_ids": [
+          "NEWS-AAPL-a1dcd6626d29"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-0fbfaaf255bb",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Apple's $320 Stock Faces Huawei's 68% Foldable Fortress",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/apples-320-stock-faces-huaweis-214227363.html"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-0fbfaaf255bb",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Apple's $320 Stock Faces Huawei's 68% Foldable Fortress. Two Chinese rivals unveiled premium foldables before Wednesday's Apple event, raising the competitive stakes in its most difficult major market.",
+        "character_count": 201
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-0fbfaaf255bb",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "ai_capex_cloud",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 1,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 1
+        },
+        "sentiment": "positive",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-0fbfaaf255bb",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "apple"
+        ],
+        "event": "Apple's $320 Stock Faces Huawei's 68% Foldable Fortress",
+        "numeric_mentions": [
+          "$320",
+          "68%"
+        ],
+        "catalyst_or_risk": "catalyst",
+        "time_horizon": "recent",
+        "sentiment": "positive",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-AAPL-0fbfaaf255bb"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-0fbfaaf255bb",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "AAPL: Apple's $320 Stock Faces Huawei's 68% Foldable Fortress [positive; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-AAPL-0fbfaaf255bb"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-98e33dc16473",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Jim Cramer Wants Nvidia to Buy Back $500 Billion. Can Apple\u2019s Playbook Work?",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-wants-nvidia-buy-203415967.html"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-98e33dc16473",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Jim Cramer Wants Nvidia to Buy Back $500 Billion. Can Apple\u2019s Playbook Work?. Jim Cramer wants NVIDIA Corporation (NASDAQ:NVDA) to authorize a $500 billion buyback and purchase shares daily. His September 1 Mad Money argument points to Apple Inc. (NASDAQ:AAPL) as the model. Both businesses return substantial capital, but their cash demands complicate copying the same strategy. Nvidia\u2019s quarterly filing shows $99.3 billion of remaining authorization at July [\u2026]",
+        "character_count": 464
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-98e33dc16473",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "ai_capex_cloud",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 1,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "neutral",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-98e33dc16473",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "aapl",
+          "apple"
+        ],
+        "event": "Jim Cramer Wants Nvidia to Buy Back $500 Billion. Can Apple\u2019s Playbook Work?",
+        "numeric_mentions": [
+          "$500 Billion",
+          "$500 billion",
+          "1",
+          "$99.3 billion"
+        ],
+        "catalyst_or_risk": "context",
+        "time_horizon": "recent",
+        "sentiment": "neutral",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-AAPL-98e33dc16473"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-AAPL-98e33dc16473",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "AAPL: Jim Cramer Wants Nvidia to Buy Back $500 Billion. Can Apple\u2019s Playbook Work? [neutral; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-AAPL-98e33dc16473"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-5fed3966a914",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "The real danger of black market peptides: Novo Nordisk CEO",
+        "url": "https://finance.yahoo.com/video/real-danger-black-market-peptides-110000226.html"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-5fed3966a914",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "The real danger of black market peptides: Novo Nordisk CEO. Yahoo Finance Executive Editor Brian Sozzi chats with Novo Nordisk CEO Mike Doustdar about the alarming rise of untested, black-market peptides being pushed by influencers online.",
+        "character_count": 239
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-5fed3966a914",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "leadership_labor",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 0,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 2,
+          "macro_market": 1
+        },
+        "sentiment": "neutral",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "negative"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-5fed3966a914",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "AMZN"
+        ],
+        "event": "The real danger of black market peptides: Novo Nordisk CEO",
+        "numeric_mentions": [],
+        "catalyst_or_risk": "context",
+        "time_horizon": "recent",
+        "sentiment": "neutral",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-AMZN-5fed3966a914"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-5fed3966a914",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "AMZN: The real danger of black market peptides: Novo Nordisk CEO [neutral; leadership_labor]",
+        "evidence_ids": [
+          "NEWS-AMZN-5fed3966a914"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-087289eb5184",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Scene of Fatal Amazon Plane Crash in Miami Is \u2018Devastating\u2019",
+        "url": "https://www.barrons.com/articles/amazon-plane-crash-boeing-miami-airport-35c47fa3?siteid=yhoof2&yptr=yahoo"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-087289eb5184",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Scene of Fatal Amazon Plane Crash in Miami Is \u2018Devastating\u2019. The Boeing plane struck navigational devices, a Ford, a Toyota, and two fences before coming to rest in a Tesla robo-taxi station, the NTSB said. Five people died and several others were injured.",
+        "character_count": 256
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-087289eb5184",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "ai_capex_cloud",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 1,
+          "product_strategy": 1,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "negative",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-087289eb5184",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "amazon"
+        ],
+        "event": "Scene of Fatal Amazon Plane Crash in Miami Is \u2018Devastating\u2019",
+        "numeric_mentions": [],
+        "catalyst_or_risk": "risk",
+        "time_horizon": "recent",
+        "sentiment": "negative",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-AMZN-087289eb5184"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-087289eb5184",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "AMZN: Scene of Fatal Amazon Plane Crash in Miami Is \u2018Devastating\u2019 [negative; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-AMZN-087289eb5184"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-9530afb52713",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Amazon's 250-Flight Air Network Faces a Fatal Miami Investigation",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/amazons-250-flight-air-network-215415583.html"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-9530afb52713",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Amazon's 250-Flight Air Network Faces a Fatal Miami Investigation. One contractor-operated aircraft represents limited capacity, but the crash creates a major safety and oversight test.",
+        "character_count": 185
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-9530afb52713",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "ai_capex_cloud",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 1,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "negative",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-9530afb52713",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "amazon"
+        ],
+        "event": "Amazon's 250-Flight Air Network Faces a Fatal Miami Investigation",
+        "numeric_mentions": [
+          "250"
+        ],
+        "catalyst_or_risk": "risk",
+        "time_horizon": "recent",
+        "sentiment": "negative",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-AMZN-9530afb52713"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-9530afb52713",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "AMZN: Amazon's 250-Flight Air Network Faces a Fatal Miami Investigation [negative; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-AMZN-9530afb52713"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-69d3c4bd6fdb",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "SoftBank Explodes 11.2% as AI Mania Roars Back Across Asia",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/softbank-explodes-11-2-ai-214601624.html"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-69d3c4bd6fdb",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "SoftBank Explodes 11.2% as AI Mania Roars Back Across Asia. The rally rewards SoftBank's concentrated AI strategy while increasing the return demanded from its $30 billion OpenAI commitment.",
+        "character_count": 190
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-69d3c4bd6fdb",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "ai_capex_cloud",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 1,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "positive",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-69d3c4bd6fdb",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "AMZN"
+        ],
+        "event": "SoftBank Explodes 11.2% as AI Mania Roars Back Across Asia",
+        "numeric_mentions": [
+          "11.2%",
+          "$30 billion"
+        ],
+        "catalyst_or_risk": "catalyst",
+        "time_horizon": "recent",
+        "sentiment": "positive",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-AMZN-69d3c4bd6fdb"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-69d3c4bd6fdb",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "AMZN: SoftBank Explodes 11.2% as AI Mania Roars Back Across Asia [positive; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-AMZN-69d3c4bd6fdb"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-01a2db31d003",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Is Amazon Stock at $255 a Share an Obvious Buy Right Now?",
+        "url": "https://www.fool.com/investing/2026/09/07/is-amazon-stock-at-255-a-share-an-obvious-buy-r/"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-01a2db31d003",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Is Amazon Stock at $255 a Share an Obvious Buy Right Now?. The stock's valuation has plunged, but massive AI spending may have given some investors pause.",
+        "character_count": 154
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-01a2db31d003",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "ai_capex_cloud",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 1,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "negative",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-01a2db31d003",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "amazon"
+        ],
+        "event": "Is Amazon Stock at $255 a Share an Obvious Buy Right Now?",
+        "numeric_mentions": [
+          "$255"
+        ],
+        "catalyst_or_risk": "risk",
+        "time_horizon": "recent",
+        "sentiment": "negative",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-AMZN-01a2db31d003"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-AMZN-01a2db31d003",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "AMZN: Is Amazon Stock at $255 a Share an Obvious Buy Right Now? [negative; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-AMZN-01a2db31d003"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-99d39485a13b",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Is Netflix Stock More Likely to Hit $100 or $60 by the End of 2026?",
+        "url": "https://www.fool.com/investing/2026/09/07/is-netflix-stock-more-likely-to-hit-100-or-60-by-the-end-of-2026/"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-99d39485a13b",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Is Netflix Stock More Likely to Hit $100 or $60 by the End of 2026?. The streaming stock is down 38% in the past 12 months, and its valuation may look enticing to many investors.",
+        "character_count": 178
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-99d39485a13b",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "other",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 0,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "negative",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-99d39485a13b",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "netflix"
+        ],
+        "event": "Is Netflix Stock More Likely to Hit $100 or $60 by the End of 2026?",
+        "numeric_mentions": [
+          "$100",
+          "$60",
+          "2026",
+          "38%",
+          "12"
+        ],
+        "catalyst_or_risk": "risk",
+        "time_horizon": "recent",
+        "sentiment": "negative",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-NFLX-99d39485a13b"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-99d39485a13b",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "NFLX: Is Netflix Stock More Likely to Hit $100 or $60 by the End of 2026? [negative; other]",
+        "evidence_ids": [
+          "NEWS-NFLX-99d39485a13b"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-9c821a376a07",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Investors Heavily Search Netflix, Inc. (NFLX): Here is What You Need to Know",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/investors-heavily-search-netflix-inc-130003010.html"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-9c821a376a07",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Investors Heavily Search Netflix, Inc. (NFLX): Here is What You Need to Know. Zacks.com users have recently been watching Netflix (NFLX) quite a bit. Thus, it is worth knowing the facts that could determine the stock's prospects.",
+        "character_count": 229
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-9c821a376a07",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "other",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 0,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "neutral",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-9c821a376a07",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "netflix",
+          "nflx"
+        ],
+        "event": "Investors Heavily Search Netflix, Inc. (NFLX): Here is What You Need to Know",
+        "numeric_mentions": [],
+        "catalyst_or_risk": "context",
+        "time_horizon": "recent",
+        "sentiment": "neutral",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-NFLX-9c821a376a07"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-9c821a376a07",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "NFLX: Investors Heavily Search Netflix, Inc. (NFLX): Here is What You Need to Know [neutral; other]",
+        "evidence_ids": [
+          "NEWS-NFLX-9c821a376a07"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-b8a6366cdb9c",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Netflix Has Momentum Despite Being Down in 2026. One Analyst\u2019s Price Target Implies 70% Upside",
+        "url": "https://247wallst.com/investing/2026/09/07/netflix-has-momentum-despite-being-down-in-2026-one-analysts-price-target-implies-70-upside/"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-b8a6366cdb9c",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Netflix Has Momentum Despite Being Down in 2026. One Analyst\u2019s Price Target Implies 70% Upside. Netflix has shed more than a third of its value while the broader market climbs, yet one Wall Street analyst sees a path back that would leave today's sellers deeply regretting their exits.",
+        "character_count": 285
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-b8a6366cdb9c",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "macro_market",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 0,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 1
+        },
+        "sentiment": "negative",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-b8a6366cdb9c",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "netflix"
+        ],
+        "event": "Netflix Has Momentum Despite Being Down in 2026. One Analyst\u2019s Price Target Implies 70% Upside",
+        "numeric_mentions": [
+          "2026",
+          "70%"
+        ],
+        "catalyst_or_risk": "risk",
+        "time_horizon": "recent",
+        "sentiment": "negative",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-NFLX-b8a6366cdb9c"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-b8a6366cdb9c",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "NFLX: Netflix Has Momentum Despite Being Down in 2026. One Analyst\u2019s Price Target Implies 70% Upside [negative; macro_market]",
+        "evidence_ids": [
+          "NEWS-NFLX-b8a6366cdb9c"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-6ae9d32b48c7",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Netflix Has No Dividend. Here's Why Long-Term Investors Should Own It Anyway.",
+        "url": "https://www.fool.com/investing/2026/09/07/netflix-no-dividend-why-long-term-investor-own/"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-6ae9d32b48c7",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Netflix Has No Dividend. Here's Why Long-Term Investors Should Own It Anyway.. Despite its recent headwind, the streaming giant still offers more growth potential than plenty of other tickers categorized as growth stocks.",
+        "character_count": 221
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-6ae9d32b48c7",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "other",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 0,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "neutral",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "positive"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-6ae9d32b48c7",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "netflix"
+        ],
+        "event": "Netflix Has No Dividend. Here's Why Long-Term Investors Should Own It Anyway.",
+        "numeric_mentions": [],
+        "catalyst_or_risk": "context",
+        "time_horizon": "recent",
+        "sentiment": "neutral",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-NFLX-6ae9d32b48c7"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-6ae9d32b48c7",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "NFLX: Netflix Has No Dividend. Here's Why Long-Term Investors Should Own It Anyway. [neutral; other]",
+        "evidence_ids": [
+          "NEWS-NFLX-6ae9d32b48c7"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-c272c480ce2a",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Netflix raises UK prices with cheapest plan up by a third",
+        "url": "https://uk.finance.yahoo.com/news/netflix-raises-uk-prices-cheapest-160442297.html"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-c272c480ce2a",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Netflix raises UK prices with cheapest plan up by a third. Netflix is now charging \u00a37.99 a month for its cheapest standard plan, with adverts.",
+        "character_count": 142
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-c272c480ce2a",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "ai_capex_cloud",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 1,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "positive",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-c272c480ce2a",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "netflix"
+        ],
+        "event": "Netflix raises UK prices with cheapest plan up by a third",
+        "numeric_mentions": [
+          "7.99"
+        ],
+        "catalyst_or_risk": "catalyst",
+        "time_horizon": "recent",
+        "sentiment": "positive",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-NFLX-c272c480ce2a"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-c272c480ce2a",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "NFLX: Netflix raises UK prices with cheapest plan up by a third [positive; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-NFLX-c272c480ce2a"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-861b0cebab53",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Billionaire Bill Ackman Sells Alphabet Stock and Buys a Mega-Cap Stock Down 42% From Its High",
+        "url": "https://www.fool.com/investing/2026/09/07/bill-ackman-sell-alphabet-stock-buy-mega-cap-stock/"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-861b0cebab53",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Billionaire Bill Ackman Sells Alphabet Stock and Buys a Mega-Cap Stock Down 42% From Its High. Money manager Bill Ackman recently added Netflix stock to his portfolio.",
+        "character_count": 167
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-861b0cebab53",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "ai_capex_cloud",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 1,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "negative",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-861b0cebab53",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "netflix"
+        ],
+        "event": "Billionaire Bill Ackman Sells Alphabet Stock and Buys a Mega-Cap Stock Down 42% From Its High",
+        "numeric_mentions": [
+          "42%"
+        ],
+        "catalyst_or_risk": "risk",
+        "time_horizon": "recent",
+        "sentiment": "negative",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-NFLX-861b0cebab53"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-NFLX-861b0cebab53",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "NFLX: Billionaire Bill Ackman Sells Alphabet Stock and Buys a Mega-Cap Stock Down 42% From Its High [negative; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-NFLX-861b0cebab53"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-21520da8855d",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Weight loss is just the beginning of GLP-1's: Novo Nordisk CEO",
+        "url": "https://finance.yahoo.com/video/weight-loss-just-beginning-glp-100000472.html"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-21520da8855d",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Weight loss is just the beginning of GLP-1's: Novo Nordisk CEO. Yahoo Finance Executive Editor Brian Sozzi chats with Novo Nordisk CEO Mike Doustdar about the true timeline for how GLP-1s will impact the food and airline industries, and what the future of weight loss and preventative health looks like over the next decade.",
+        "character_count": 324
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-21520da8855d",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "leadership_labor",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 1,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 2,
+          "macro_market": 0
+        },
+        "sentiment": "neutral",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "negative"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-21520da8855d",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "GOOGL"
+        ],
+        "event": "Weight loss is just the beginning of GLP-1's: Novo Nordisk CEO",
+        "numeric_mentions": [
+          "1",
+          "1"
+        ],
+        "catalyst_or_risk": "context",
+        "time_horizon": "recent",
+        "sentiment": "neutral",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-GOOGL-21520da8855d"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-21520da8855d",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "GOOGL: Weight loss is just the beginning of GLP-1's: Novo Nordisk CEO [neutral; leadership_labor]",
+        "evidence_ids": [
+          "NEWS-GOOGL-21520da8855d"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-172c3b4e32f0",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Warren Buffett Told CNBC 'I Initiated It' About Berkshire's Alphabet Bet, and New Reporting Says He's Still Calling the Shots on Stocks. Here's What That Means for Reading Greg Abel's Tenure.",
+        "url": "https://www.fool.com/investing/2026/09/07/warren-buffett-told-cnbc-i-initiated-it-about-berk/"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-172c3b4e32f0",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Warren Buffett Told CNBC 'I Initiated It' About Berkshire's Alphabet Bet, and New Reporting Says He's Still Calling the Shots on Stocks. Here's What That Means for Reading Greg Abel's Tenure.. Berkshire Hathaway could be moving toward a more traditional insurance model.",
+        "character_count": 270
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-172c3b4e32f0",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "other",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 0,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "neutral",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-172c3b4e32f0",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "alphabet"
+        ],
+        "event": "Warren Buffett Told CNBC 'I Initiated It' About Berkshire's Alphabet Bet, and New Reporting Says He's Still Calling the Shots on Stocks. Here's What That Means for Reading Greg Abel's Tenure.",
+        "numeric_mentions": [],
+        "catalyst_or_risk": "context",
+        "time_horizon": "recent",
+        "sentiment": "neutral",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-GOOGL-172c3b4e32f0"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-172c3b4e32f0",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "GOOGL: Warren Buffett Told CNBC 'I Initiated It' About Berkshire's Alphabet Bet, and New Reporting Says He's Still Calling the Shots on Stocks. Here's What That Means for Reading Greg Abel's Tenure. [neutral; other]",
+        "evidence_ids": [
+          "NEWS-GOOGL-172c3b4e32f0"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-a19722b5221d",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Google's AI Slashes Contrail Warming 40% in a Real-World Test",
+        "url": "https://finance.yahoo.com/technology/ai/articles/googles-ai-slashes-contrail-warming-215343560.html"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-a19722b5221d",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Google's AI Slashes Contrail Warming 40% in a Real-World Test. Cathay's ultra-long-haul trial gives Alphabet a climate showcase, although commercial terms remain undisclosed.",
+        "character_count": 174
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-a19722b5221d",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "ai_capex_cloud",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 1,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "positive",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-a19722b5221d",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "alphabet",
+          "googl"
+        ],
+        "event": "Google's AI Slashes Contrail Warming 40% in a Real-World Test",
+        "numeric_mentions": [
+          "40%"
+        ],
+        "catalyst_or_risk": "catalyst",
+        "time_horizon": "recent",
+        "sentiment": "positive",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-GOOGL-a19722b5221d"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-a19722b5221d",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "GOOGL: Google's AI Slashes Contrail Warming 40% in a Real-World Test [positive; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-GOOGL-a19722b5221d"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-bb9a54929d80",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Berkshire Hathaway Owns AI Exposure in 3 Different Ways. Here's Why That's Not the Same as Owning Nvidia.",
+        "url": "https://www.fool.com/investing/2026/09/07/berkshire-owns-ai-exposure-3-different-ways-heres/"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-bb9a54929d80",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Berkshire Hathaway Owns AI Exposure in 3 Different Ways. Here's Why That's Not the Same as Owning Nvidia.. Why doesn't Berkshire own the top AI stock?",
+        "character_count": 150
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-bb9a54929d80",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "ai_capex_cloud",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 1,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "neutral",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-bb9a54929d80",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "GOOGL"
+        ],
+        "event": "Berkshire Hathaway Owns AI Exposure in 3 Different Ways. Here's Why That's Not the Same as Owning Nvidia.",
+        "numeric_mentions": [
+          "3"
+        ],
+        "catalyst_or_risk": "context",
+        "time_horizon": "recent",
+        "sentiment": "neutral",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-GOOGL-bb9a54929d80"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-bb9a54929d80",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "GOOGL: Berkshire Hathaway Owns AI Exposure in 3 Different Ways. Here's Why That's Not the Same as Owning Nvidia. [neutral; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-GOOGL-bb9a54929d80"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-952d26452bd0",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Apple\u2019s new CEO faces a staggering $14 billion iPhone test",
+        "url": "https://www.thestreet.com/investing/apples-new-ceo-faces-a-staggering-14-billion-iphone-test"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-952d26452bd0",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Apple\u2019s new CEO faces a staggering $14 billion iPhone test. Apple\u2019s biggest iPhone change in years comes with a huge price",
+        "character_count": 122
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-952d26452bd0",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "leadership_labor",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 0,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 1,
+          "macro_market": 0
+        },
+        "sentiment": "neutral",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-952d26452bd0",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "GOOGL"
+        ],
+        "event": "Apple\u2019s new CEO faces a staggering $14 billion iPhone test",
+        "numeric_mentions": [
+          "$14 billion"
+        ],
+        "catalyst_or_risk": "context",
+        "time_horizon": "recent",
+        "sentiment": "neutral",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-GOOGL-952d26452bd0"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-GOOGL-952d26452bd0",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "GOOGL: Apple\u2019s new CEO faces a staggering $14 billion iPhone test [neutral; leadership_labor]",
+        "evidence_ids": [
+          "NEWS-GOOGL-952d26452bd0"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-MSFT-7a4bcf35113e",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Nvidia CEO Says Human-Level AI Is Here. He Sells the Chips.",
+        "url": "https://beincrypto.com/nvidia-ceo-jensen-huang-agi-claim/"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-MSFT-7a4bcf35113e",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Nvidia CEO Says Human-Level AI Is Here. He Sells the Chips.. Huang told the G20 we were practically at AGI. Four days later he said it had arrived. Nobody can referee him.",
+        "character_count": 171
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-MSFT-7a4bcf35113e",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "ai_capex_cloud",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 1,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 1,
+          "macro_market": 0
+        },
+        "sentiment": "neutral",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-MSFT-7a4bcf35113e",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "MSFT"
+        ],
+        "event": "Nvidia CEO Says Human-Level AI Is Here. He Sells the Chips.",
+        "numeric_mentions": [
+          "20"
+        ],
+        "catalyst_or_risk": "context",
+        "time_horizon": "recent",
+        "sentiment": "neutral",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-MSFT-7a4bcf35113e"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-MSFT-7a4bcf35113e",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "MSFT: Nvidia CEO Says Human-Level AI Is Here. He Sells the Chips. [neutral; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-MSFT-7a4bcf35113e"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    },
+    {
+      "evidence_id": "NEWS-MSFT-2617353783e9",
+      "stage": "ingest",
+      "passed_gate": true,
+      "payload": {
+        "title": "Microsoft Has a $1,000 Problem With Its Next Xbox",
+        "url": "https://finance.yahoo.com/technology/articles/microsoft-1-000-problem-next-192040075.html"
+      },
+      "message": "Required title, URL, and text are present"
+    },
+    {
+      "evidence_id": "NEWS-MSFT-2617353783e9",
+      "stage": "preprocess",
+      "passed_gate": true,
+      "payload": {
+        "clean_text": "Microsoft Has a $1,000 Problem With Its Next Xbox. Microsoft is developing Project Helix as its next-generation Xbox",
+        "character_count": 116
+      },
+      "message": "Whitespace normalized; numbers and negation preserved"
+    },
+    {
+      "evidence_id": "NEWS-MSFT-2617353783e9",
+      "stage": "classify",
+      "passed_gate": true,
+      "payload": {
+        "primary_topic": "other",
+        "topic_scores": {
+          "earnings_financials": 0,
+          "ai_capex_cloud": 0,
+          "product_strategy": 0,
+          "regulatory_legal": 0,
+          "leadership_labor": 0,
+          "macro_market": 0
+        },
+        "sentiment": "negative",
+        "sentiment_method": "FinBERT",
+        "lexical_sentiment": "neutral"
+      },
+      "message": "Topic and sentiment are separate classifications"
+    },
+    {
+      "evidence_id": "NEWS-MSFT-2617353783e9",
+      "stage": "extract",
+      "passed_gate": true,
+      "payload": {
+        "companies": [
+          "microsoft"
+        ],
+        "event": "Microsoft Has a $1,000 Problem With Its Next Xbox",
+        "numeric_mentions": [
+          "$1",
+          "000"
+        ],
+        "catalyst_or_risk": "risk",
+        "time_horizon": "recent",
+        "sentiment": "negative",
+        "uncertainty": "Headline and supplied summary only; full article was not ingested",
+        "evidence_id": "NEWS-MSFT-2617353783e9"
+      },
+      "message": "Every extracted number occurs in the source text"
+    },
+    {
+      "evidence_id": "NEWS-MSFT-2617353783e9",
+      "stage": "summarize",
+      "passed_gate": true,
+      "payload": {
+        "summary": "MSFT: Microsoft Has a $1,000 Problem With Its Next Xbox [negative; other]",
+        "evidence_ids": [
+          "NEWS-MSFT-2617353783e9"
+        ]
+      },
+      "message": "Summary is source-linked and introduces no new number"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "FIN-AAPL-2025",
+      "ticker": "AAPL",
+      "category": "financial_execution",
+      "claim": "AAPL FY2025: revenue growth -2.8%, operating margin 29.8%, FCF margin 26.0%, and capex intensity 2.9%.",
+      "direction": "positive",
+      "evidence_ids": [
+        "FACTS-AAPL-2025"
+      ],
+      "confidence": 0.98,
+      "limitations": [
+        "FCF is operating cash flow minus capital expenditures"
+      ]
+    },
+    {
+      "finding_id": "FIN-AMZN-2025",
+      "ticker": "AMZN",
+      "category": "financial_execution",
+      "claim": "AMZN FY2025: revenue growth 11.8%, operating margin 6.4%, FCF margin 5.6%, and capex intensity 9.2%.",
+      "direction": "positive",
+      "evidence_ids": [
+        "FACTS-AMZN-2025"
+      ],
+      "confidence": 0.98,
+      "limitations": [
+        "FCF is operating cash flow minus capital expenditures"
+      ]
+    },
+    {
+      "finding_id": "FIN-GOOGL-2025",
+      "ticker": "GOOGL",
+      "category": "financial_execution",
+      "claim": "GOOGL FY2025: revenue growth 8.7%, operating margin 27.4%, FCF margin 22.6%, and capex intensity 10.5%.",
+      "direction": "positive",
+      "evidence_ids": [
+        "FACTS-GOOGL-2025"
+      ],
+      "confidence": 0.98,
+      "limitations": [
+        "FCF is operating cash flow minus capital expenditures"
+      ]
+    },
+    {
+      "finding_id": "FIN-META-2025",
+      "ticker": "META",
+      "category": "financial_execution",
+      "claim": "META FY2025: revenue growth 15.7%, operating margin 34.7%, FCF margin 32.7%, and capex intensity 20.0%.",
+      "direction": "positive",
+      "evidence_ids": [
+        "FACTS-META-2025"
+      ],
+      "confidence": 0.98,
+      "limitations": [
+        "FCF is operating cash flow minus capital expenditures"
+      ]
+    },
+    {
+      "finding_id": "FIN-MSFT-2026",
+      "ticker": "MSFT",
+      "category": "financial_execution",
+      "claim": "MSFT FY2026: revenue growth 15.7%, operating margin 44.6%, FCF margin 30.2%, and capex intensity 18.1%.",
+      "direction": "positive",
+      "evidence_ids": [
+        "FACTS-MSFT-2026"
+      ],
+      "confidence": 0.98,
+      "limitations": [
+        "FCF is operating cash flow minus capital expenditures"
+      ]
+    },
+    {
+      "finding_id": "FIN-NFLX-2025",
+      "ticker": "NFLX",
+      "category": "financial_execution",
+      "claim": "NFLX FY2025: revenue growth 6.7%, operating margin 20.6%, FCF margin 20.5%, and capex intensity 1.0%.",
+      "direction": "positive",
+      "evidence_ids": [
+        "FACTS-NFLX-2025"
+      ],
+      "confidence": 0.98,
+      "limitations": [
+        "FCF is operating cash flow minus capital expenditures"
+      ]
+    },
+    {
+      "finding_id": "MKT-AAPL",
+      "ticker": "AAPL",
+      "category": "market_confirmation",
+      "claim": "AAPL returned 39.8%, with 25.2% annualized volatility, -13.8% maximum drawdown, and 12.1% excess return versus QQQ.",
+      "direction": "positive",
+      "evidence_ids": [
+        "MARKET-AAPL"
+      ],
+      "confidence": 0.98,
+      "limitations": [
+        "Descriptive association; not causal attribution"
+      ]
+    },
+    {
+      "finding_id": "MKT-AMZN",
+      "ticker": "AMZN",
+      "category": "market_confirmation",
+      "claim": "AMZN returned 14.7%, with 34.5% annualized volatility, -21.7% maximum drawdown, and -13.0% excess return versus QQQ.",
+      "direction": "negative",
+      "evidence_ids": [
+        "MARKET-AMZN"
+      ],
+      "confidence": 0.98,
+      "limitations": [
+        "Descriptive association; not causal attribution"
+      ]
+    },
+    {
+      "finding_id": "MKT-GOOGL",
+      "ticker": "GOOGL",
+      "category": "market_confirmation",
+      "claim": "GOOGL returned 60.7%, with 32.6% annualized volatility, -21.0% maximum drawdown, and 33.0% excess return versus QQQ.",
+      "direction": "positive",
+      "evidence_ids": [
+        "MARKET-GOOGL"
+      ],
+      "confidence": 0.98,
+      "limitations": [
+        "Descriptive association; not causal attribution"
+      ]
+    },
+    {
+      "finding_id": "MKT-META",
+      "ticker": "META",
+      "category": "market_confirmation",
+      "claim": "META returned -15.8%, with 38.8% annualized volatility, -32.5% maximum drawdown, and -43.5% excess return versus QQQ.",
+      "direction": "negative",
+      "evidence_ids": [
+        "MARKET-META"
+      ],
+      "confidence": 0.98,
+      "limitations": [
+        "Descriptive association; not causal attribution"
+      ]
+    },
+    {
+      "finding_id": "MKT-MSFT",
+      "ticker": "MSFT",
+      "category": "market_confirmation",
+      "claim": "MSFT returned -0.3%, with 32.4% annualized volatility, -34.5% maximum drawdown, and -28.0% excess return versus QQQ.",
+      "direction": "negative",
+      "evidence_ids": [
+        "MARKET-MSFT"
+      ],
+      "confidence": 0.98,
+      "limitations": [
+        "Descriptive association; not causal attribution"
+      ]
+    },
+    {
+      "finding_id": "MKT-NFLX",
+      "ticker": "NFLX",
+      "category": "market_confirmation",
+      "claim": "NFLX returned -35.5%, with 35.8% annualized volatility, -46.5% maximum drawdown, and -63.3% excess return versus QQQ.",
+      "direction": "negative",
+      "evidence_ids": [
+        "MARKET-NFLX"
+      ],
+      "confidence": 0.98,
+      "limitations": [
+        "Descriptive association; not causal attribution"
+      ]
+    },
+    {
+      "finding_id": "FILING-META-10-K",
+      "ticker": "META",
+      "category": "filing_narrative",
+      "claim": "META 10-K contains 122 AI-related tokens (15.0 per 10,000 words).",
+      "direction": "neutral",
+      "evidence_ids": [
+        "SEC-META-10-K-0001628280-26-003942"
+      ],
+      "confidence": 0.9,
+      "limitations": [
+        "Token frequency measures emphasis, not economic value"
+      ]
+    },
+    {
+      "finding_id": "FILING-META-10-Q",
+      "ticker": "META",
+      "category": "filing_narrative",
+      "claim": "META 10-Q contains 113 AI-related tokens (17.8 per 10,000 words).",
+      "direction": "neutral",
+      "evidence_ids": [
+        "SEC-META-10-Q-0001628280-26-050705"
+      ],
+      "confidence": 0.9,
+      "limitations": [
+        "Token frequency measures emphasis, not economic value"
+      ]
+    },
+    {
+      "finding_id": "FILING-AAPL-10-K",
+      "ticker": "AAPL",
+      "category": "filing_narrative",
+      "claim": "AAPL 10-K contains 9 AI-related tokens (2.8 per 10,000 words).",
+      "direction": "neutral",
+      "evidence_ids": [
+        "SEC-AAPL-10-K-0000320193-25-000079"
+      ],
+      "confidence": 0.9,
+      "limitations": [
+        "Token frequency measures emphasis, not economic value"
+      ]
+    },
+    {
+      "finding_id": "FILING-AAPL-10-Q",
+      "ticker": "AAPL",
+      "category": "filing_narrative",
+      "claim": "AAPL 10-Q contains 7 AI-related tokens (5.1 per 10,000 words).",
+      "direction": "neutral",
+      "evidence_ids": [
+        "SEC-AAPL-10-Q-0000320193-26-000020"
+      ],
+      "confidence": 0.9,
+      "limitations": [
+        "Token frequency measures emphasis, not economic value"
+      ]
+    },
+    {
+      "finding_id": "FILING-AMZN-10-K",
+      "ticker": "AMZN",
+      "category": "filing_narrative",
+      "claim": "AMZN 10-K contains 52 AI-related tokens (11.7 per 10,000 words).",
+      "direction": "neutral",
+      "evidence_ids": [
+        "SEC-AMZN-10-K-0001018724-26-000004"
+      ],
+      "confidence": 0.9,
+      "limitations": [
+        "Token frequency measures emphasis, not economic value"
+      ]
+    },
+    {
+      "finding_id": "FILING-AMZN-10-Q",
+      "ticker": "AMZN",
+      "category": "filing_narrative",
+      "claim": "AMZN 10-Q contains 34 AI-related tokens (10.8 per 10,000 words).",
+      "direction": "neutral",
+      "evidence_ids": [
+        "SEC-AMZN-10-Q-0001018724-26-000026"
+      ],
+      "confidence": 0.9,
+      "limitations": [
+        "Token frequency measures emphasis, not economic value"
+      ]
+    },
+    {
+      "finding_id": "FILING-NFLX-10-K",
+      "ticker": "NFLX",
+      "category": "filing_narrative",
+      "claim": "NFLX 10-K contains 5 AI-related tokens (1.2 per 10,000 words).",
+      "direction": "neutral",
+      "evidence_ids": [
+        "SEC-NFLX-10-K-0001065280-26-000034"
+      ],
+      "confidence": 0.9,
+      "limitations": [
+        "Token frequency measures emphasis, not economic value"
+      ]
+    },
+    {
+      "finding_id": "FILING-NFLX-10-Q",
+      "ticker": "NFLX",
+      "category": "filing_narrative",
+      "claim": "NFLX 10-Q contains 0 AI-related tokens (0.0 per 10,000 words).",
+      "direction": "neutral",
+      "evidence_ids": [
+        "SEC-NFLX-10-Q-0001065280-26-000212"
+      ],
+      "confidence": 0.9,
+      "limitations": [
+        "Token frequency measures emphasis, not economic value"
+      ]
+    },
+    {
+      "finding_id": "FILING-GOOGL-10-K",
+      "ticker": "GOOGL",
+      "category": "filing_narrative",
+      "claim": "GOOGL 10-K contains 99 AI-related tokens (18.0 per 10,000 words).",
+      "direction": "neutral",
+      "evidence_ids": [
+        "SEC-GOOGL-10-K-0001652044-26-000018"
+      ],
+      "confidence": 0.9,
+      "limitations": [
+        "Token frequency measures emphasis, not economic value"
+      ]
+    },
+    {
+      "finding_id": "FILING-GOOGL-10-Q",
+      "ticker": "GOOGL",
+      "category": "filing_narrative",
+      "claim": "GOOGL 10-Q contains 21 AI-related tokens (6.2 per 10,000 words).",
+      "direction": "neutral",
+      "evidence_ids": [
+        "SEC-GOOGL-10-Q-0001652044-26-000071"
+      ],
+      "confidence": 0.9,
+      "limitations": [
+        "Token frequency measures emphasis, not economic value"
+      ]
+    },
+    {
+      "finding_id": "FILING-MSFT-10-K",
+      "ticker": "MSFT",
+      "category": "filing_narrative",
+      "claim": "MSFT 10-K contains 133 AI-related tokens (26.2 per 10,000 words).",
+      "direction": "neutral",
+      "evidence_ids": [
+        "SEC-MSFT-10-K-0001193125-26-323660"
+      ],
+      "confidence": 0.9,
+      "limitations": [
+        "Token frequency measures emphasis, not economic value"
+      ]
+    },
+    {
+      "finding_id": "FILING-MSFT-10-Q",
+      "ticker": "MSFT",
+      "category": "filing_narrative",
+      "claim": "MSFT 10-Q contains 88 AI-related tokens (26.3 per 10,000 words).",
+      "direction": "neutral",
+      "evidence_ids": [
+        "SEC-MSFT-10-Q-0001193125-26-191507"
+      ],
+      "confidence": 0.9,
+      "limitations": [
+        "Token frequency measures emphasis, not economic value"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-META-68783d5edaa0",
+      "ticker": "META",
+      "category": "news:earnings_financials",
+      "claim": "META: Palantir Stock Leads August Rally -- Nvidia, Salesforce and Super Micro Jump [positive; earnings_financials]",
+      "direction": "positive",
+      "evidence_ids": [
+        "NEWS-META-68783d5edaa0"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-META-0762258e2ed6",
+      "ticker": "META",
+      "category": "news:other",
+      "claim": "META: How a 64-Year-Old\u2019s $1.2 Million in VOO Turned Into a $456,000 Bet on a Single Sector [neutral; other]",
+      "direction": "neutral",
+      "evidence_ids": [
+        "NEWS-META-0762258e2ed6"
+      ],
+      "confidence": 0.55,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-META-940aac21ef3c",
+      "ticker": "META",
+      "category": "news:ai_capex_cloud",
+      "claim": "META: Jim Cramer Says Meta (META) is \u201cAt the Price\u201d After Settlement Eases Major Legal Overhang [negative; ai_capex_cloud]",
+      "direction": "negative",
+      "evidence_ids": [
+        "NEWS-META-940aac21ef3c"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-META-7745dc75565c",
+      "ticker": "META",
+      "category": "news:ai_capex_cloud",
+      "claim": "META: Nvidia, Microsoft at Center of $7 Trillion AI Boom [positive; ai_capex_cloud]",
+      "direction": "positive",
+      "evidence_ids": [
+        "NEWS-META-7745dc75565c"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-META-a56be29b5c65",
+      "ticker": "META",
+      "category": "news:macro_market",
+      "claim": "META: AMD Is Behind The AI Chip Shift Nobody Is Talking About [neutral; macro_market]",
+      "direction": "neutral",
+      "evidence_ids": [
+        "NEWS-META-a56be29b5c65"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-META-d8c04ea161e6",
+      "ticker": "META",
+      "category": "news:ai_capex_cloud",
+      "claim": "META: Alphabet May Be the Mag 7 Stock Investors Are Underestimating [neutral; ai_capex_cloud]",
+      "direction": "neutral",
+      "evidence_ids": [
+        "NEWS-META-d8c04ea161e6"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-AAPL-ab132d1f94c8",
+      "ticker": "AAPL",
+      "category": "news:earnings_financials",
+      "claim": "AAPL: Apple's $54 Billion iPhone Engine Hits an AI Memory Squeeze [negative; earnings_financials]",
+      "direction": "negative",
+      "evidence_ids": [
+        "NEWS-AAPL-ab132d1f94c8"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-AAPL-a1dcd6626d29",
+      "ticker": "AAPL",
+      "category": "news:other",
+      "claim": "AAPL: Tim Cook Delivered a 2,720% Total Return Over 15 Years. Here's Whether John Ternus Can Do the Same for Apple Investors. [neutral; other]",
+      "direction": "neutral",
+      "evidence_ids": [
+        "NEWS-AAPL-a1dcd6626d29"
+      ],
+      "confidence": 0.55,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-AAPL-0fbfaaf255bb",
+      "ticker": "AAPL",
+      "category": "news:ai_capex_cloud",
+      "claim": "AAPL: Apple's $320 Stock Faces Huawei's 68% Foldable Fortress [positive; ai_capex_cloud]",
+      "direction": "positive",
+      "evidence_ids": [
+        "NEWS-AAPL-0fbfaaf255bb"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-AAPL-98e33dc16473",
+      "ticker": "AAPL",
+      "category": "news:ai_capex_cloud",
+      "claim": "AAPL: Jim Cramer Wants Nvidia to Buy Back $500 Billion. Can Apple\u2019s Playbook Work? [neutral; ai_capex_cloud]",
+      "direction": "neutral",
+      "evidence_ids": [
+        "NEWS-AAPL-98e33dc16473"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-AMZN-5fed3966a914",
+      "ticker": "AMZN",
+      "category": "news:leadership_labor",
+      "claim": "AMZN: The real danger of black market peptides: Novo Nordisk CEO [neutral; leadership_labor]",
+      "direction": "neutral",
+      "evidence_ids": [
+        "NEWS-AMZN-5fed3966a914"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-AMZN-087289eb5184",
+      "ticker": "AMZN",
+      "category": "news:ai_capex_cloud",
+      "claim": "AMZN: Scene of Fatal Amazon Plane Crash in Miami Is \u2018Devastating\u2019 [negative; ai_capex_cloud]",
+      "direction": "negative",
+      "evidence_ids": [
+        "NEWS-AMZN-087289eb5184"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-AMZN-9530afb52713",
+      "ticker": "AMZN",
+      "category": "news:ai_capex_cloud",
+      "claim": "AMZN: Amazon's 250-Flight Air Network Faces a Fatal Miami Investigation [negative; ai_capex_cloud]",
+      "direction": "negative",
+      "evidence_ids": [
+        "NEWS-AMZN-9530afb52713"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-AMZN-69d3c4bd6fdb",
+      "ticker": "AMZN",
+      "category": "news:ai_capex_cloud",
+      "claim": "AMZN: SoftBank Explodes 11.2% as AI Mania Roars Back Across Asia [positive; ai_capex_cloud]",
+      "direction": "positive",
+      "evidence_ids": [
+        "NEWS-AMZN-69d3c4bd6fdb"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-AMZN-01a2db31d003",
+      "ticker": "AMZN",
+      "category": "news:ai_capex_cloud",
+      "claim": "AMZN: Is Amazon Stock at $255 a Share an Obvious Buy Right Now? [negative; ai_capex_cloud]",
+      "direction": "negative",
+      "evidence_ids": [
+        "NEWS-AMZN-01a2db31d003"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-NFLX-99d39485a13b",
+      "ticker": "NFLX",
+      "category": "news:other",
+      "claim": "NFLX: Is Netflix Stock More Likely to Hit $100 or $60 by the End of 2026? [negative; other]",
+      "direction": "negative",
+      "evidence_ids": [
+        "NEWS-NFLX-99d39485a13b"
+      ],
+      "confidence": 0.55,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-NFLX-9c821a376a07",
+      "ticker": "NFLX",
+      "category": "news:other",
+      "claim": "NFLX: Investors Heavily Search Netflix, Inc. (NFLX): Here is What You Need to Know [neutral; other]",
+      "direction": "neutral",
+      "evidence_ids": [
+        "NEWS-NFLX-9c821a376a07"
+      ],
+      "confidence": 0.55,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-NFLX-b8a6366cdb9c",
+      "ticker": "NFLX",
+      "category": "news:macro_market",
+      "claim": "NFLX: Netflix Has Momentum Despite Being Down in 2026. One Analyst\u2019s Price Target Implies 70% Upside [negative; macro_market]",
+      "direction": "negative",
+      "evidence_ids": [
+        "NEWS-NFLX-b8a6366cdb9c"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-NFLX-6ae9d32b48c7",
+      "ticker": "NFLX",
+      "category": "news:other",
+      "claim": "NFLX: Netflix Has No Dividend. Here's Why Long-Term Investors Should Own It Anyway. [neutral; other]",
+      "direction": "neutral",
+      "evidence_ids": [
+        "NEWS-NFLX-6ae9d32b48c7"
+      ],
+      "confidence": 0.55,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-NFLX-c272c480ce2a",
+      "ticker": "NFLX",
+      "category": "news:ai_capex_cloud",
+      "claim": "NFLX: Netflix raises UK prices with cheapest plan up by a third [positive; ai_capex_cloud]",
+      "direction": "positive",
+      "evidence_ids": [
+        "NEWS-NFLX-c272c480ce2a"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-NFLX-861b0cebab53",
+      "ticker": "NFLX",
+      "category": "news:ai_capex_cloud",
+      "claim": "NFLX: Billionaire Bill Ackman Sells Alphabet Stock and Buys a Mega-Cap Stock Down 42% From Its High [negative; ai_capex_cloud]",
+      "direction": "negative",
+      "evidence_ids": [
+        "NEWS-NFLX-861b0cebab53"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-GOOGL-21520da8855d",
+      "ticker": "GOOGL",
+      "category": "news:leadership_labor",
+      "claim": "GOOGL: Weight loss is just the beginning of GLP-1's: Novo Nordisk CEO [neutral; leadership_labor]",
+      "direction": "neutral",
+      "evidence_ids": [
+        "NEWS-GOOGL-21520da8855d"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-GOOGL-172c3b4e32f0",
+      "ticker": "GOOGL",
+      "category": "news:other",
+      "claim": "GOOGL: Warren Buffett Told CNBC 'I Initiated It' About Berkshire's Alphabet Bet, and New Reporting Says He's Still Calling the Shots on Stocks. Here's What That Means for Reading Greg Abel's Tenure. [neutral; other]",
+      "direction": "neutral",
+      "evidence_ids": [
+        "NEWS-GOOGL-172c3b4e32f0"
+      ],
+      "confidence": 0.55,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-GOOGL-a19722b5221d",
+      "ticker": "GOOGL",
+      "category": "news:ai_capex_cloud",
+      "claim": "GOOGL: Google's AI Slashes Contrail Warming 40% in a Real-World Test [positive; ai_capex_cloud]",
+      "direction": "positive",
+      "evidence_ids": [
+        "NEWS-GOOGL-a19722b5221d"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-GOOGL-bb9a54929d80",
+      "ticker": "GOOGL",
+      "category": "news:ai_capex_cloud",
+      "claim": "GOOGL: Berkshire Hathaway Owns AI Exposure in 3 Different Ways. Here's Why That's Not the Same as Owning Nvidia. [neutral; ai_capex_cloud]",
+      "direction": "neutral",
+      "evidence_ids": [
+        "NEWS-GOOGL-bb9a54929d80"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-GOOGL-952d26452bd0",
+      "ticker": "GOOGL",
+      "category": "news:leadership_labor",
+      "claim": "GOOGL: Apple\u2019s new CEO faces a staggering $14 billion iPhone test [neutral; leadership_labor]",
+      "direction": "neutral",
+      "evidence_ids": [
+        "NEWS-GOOGL-952d26452bd0"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-MSFT-7a4bcf35113e",
+      "ticker": "MSFT",
+      "category": "news:ai_capex_cloud",
+      "claim": "MSFT: Nvidia CEO Says Human-Level AI Is Here. He Sells the Chips. [neutral; ai_capex_cloud]",
+      "direction": "neutral",
+      "evidence_ids": [
+        "NEWS-MSFT-7a4bcf35113e"
+      ],
+      "confidence": 0.72,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    },
+    {
+      "finding_id": "FIND-NEWS-MSFT-2617353783e9",
+      "ticker": "MSFT",
+      "category": "news:other",
+      "claim": "MSFT: Microsoft Has a $1,000 Problem With Its Next Xbox [negative; other]",
+      "direction": "negative",
+      "evidence_ids": [
+        "NEWS-MSFT-2617353783e9"
+      ],
+      "confidence": 0.55,
+      "limitations": [
+        "Headline and supplied summary only; full article was not ingested"
+      ]
+    }
+  ],
+  "report": {
+    "title": "FAANG+M Narrative-to-Numbers Research Brief",
+    "as_of_date": "2026-09-07",
+    "executive_summary": "The research desk evaluated 6 ticker(s) for 'Compare FAANG+M and identify the largest gaps between AI narrative, capital commitment, cash-flow support, news sentiment, and market reaction.'. It found 14 positive signals, 13 negative signals, and 5 cross-source divergences as of 2026-09-07. The optimized version explicitly separates reported facts, narrative signals, and descriptive market evidence.",
+    "claims": [
+      {
+        "claim_id": "C01",
+        "text": "AAPL FY2025: revenue growth -2.8%, operating margin 29.8%, FCF margin 26.0%, and capex intensity 2.9%.",
+        "evidence_ids": [
+          "FACTS-AAPL-2025"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C02",
+        "text": "AMZN FY2025: revenue growth 11.8%, operating margin 6.4%, FCF margin 5.6%, and capex intensity 9.2%.",
+        "evidence_ids": [
+          "FACTS-AMZN-2025"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C03",
+        "text": "GOOGL FY2025: revenue growth 8.7%, operating margin 27.4%, FCF margin 22.6%, and capex intensity 10.5%.",
+        "evidence_ids": [
+          "FACTS-GOOGL-2025"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C04",
+        "text": "META FY2025: revenue growth 15.7%, operating margin 34.7%, FCF margin 32.7%, and capex intensity 20.0%.",
+        "evidence_ids": [
+          "FACTS-META-2025"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C05",
+        "text": "MSFT FY2026: revenue growth 15.7%, operating margin 44.6%, FCF margin 30.2%, and capex intensity 18.1%.",
+        "evidence_ids": [
+          "FACTS-MSFT-2026"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C06",
+        "text": "NFLX FY2025: revenue growth 6.7%, operating margin 20.6%, FCF margin 20.5%, and capex intensity 1.0%.",
+        "evidence_ids": [
+          "FACTS-NFLX-2025"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C07",
+        "text": "AAPL returned 39.8%, with 25.2% annualized volatility, -13.8% maximum drawdown, and 12.1% excess return versus QQQ.",
+        "evidence_ids": [
+          "MARKET-AAPL"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C08",
+        "text": "AMZN returned 14.7%, with 34.5% annualized volatility, -21.7% maximum drawdown, and -13.0% excess return versus QQQ.",
+        "evidence_ids": [
+          "MARKET-AMZN"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C09",
+        "text": "GOOGL returned 60.7%, with 32.6% annualized volatility, -21.0% maximum drawdown, and 33.0% excess return versus QQQ.",
+        "evidence_ids": [
+          "MARKET-GOOGL"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C10",
+        "text": "META returned -15.8%, with 38.8% annualized volatility, -32.5% maximum drawdown, and -43.5% excess return versus QQQ.",
+        "evidence_ids": [
+          "MARKET-META"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C11",
+        "text": "MSFT returned -0.3%, with 32.4% annualized volatility, -34.5% maximum drawdown, and -28.0% excess return versus QQQ.",
+        "evidence_ids": [
+          "MARKET-MSFT"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C12",
+        "text": "NFLX returned -35.5%, with 35.8% annualized volatility, -46.5% maximum drawdown, and -63.3% excess return versus QQQ.",
+        "evidence_ids": [
+          "MARKET-NFLX"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C13",
+        "text": "META 10-K contains 122 AI-related tokens (15.0 per 10,000 words).",
+        "evidence_ids": [
+          "SEC-META-10-K-0001628280-26-003942"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C14",
+        "text": "META 10-Q contains 113 AI-related tokens (17.8 per 10,000 words).",
+        "evidence_ids": [
+          "SEC-META-10-Q-0001628280-26-050705"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C15",
+        "text": "AAPL 10-K contains 9 AI-related tokens (2.8 per 10,000 words).",
+        "evidence_ids": [
+          "SEC-AAPL-10-K-0000320193-25-000079"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C16",
+        "text": "AAPL 10-Q contains 7 AI-related tokens (5.1 per 10,000 words).",
+        "evidence_ids": [
+          "SEC-AAPL-10-Q-0000320193-26-000020"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C17",
+        "text": "AMZN 10-K contains 52 AI-related tokens (11.7 per 10,000 words).",
+        "evidence_ids": [
+          "SEC-AMZN-10-K-0001018724-26-000004"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C18",
+        "text": "AMZN 10-Q contains 34 AI-related tokens (10.8 per 10,000 words).",
+        "evidence_ids": [
+          "SEC-AMZN-10-Q-0001018724-26-000026"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C19",
+        "text": "NFLX 10-K contains 5 AI-related tokens (1.2 per 10,000 words).",
+        "evidence_ids": [
+          "SEC-NFLX-10-K-0001065280-26-000034"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C20",
+        "text": "NFLX 10-Q contains 0 AI-related tokens (0.0 per 10,000 words).",
+        "evidence_ids": [
+          "SEC-NFLX-10-Q-0001065280-26-000212"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C21",
+        "text": "GOOGL 10-K contains 99 AI-related tokens (18.0 per 10,000 words).",
+        "evidence_ids": [
+          "SEC-GOOGL-10-K-0001652044-26-000018"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C22",
+        "text": "GOOGL 10-Q contains 21 AI-related tokens (6.2 per 10,000 words).",
+        "evidence_ids": [
+          "SEC-GOOGL-10-Q-0001652044-26-000071"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C23",
+        "text": "MSFT 10-K contains 133 AI-related tokens (26.2 per 10,000 words).",
+        "evidence_ids": [
+          "SEC-MSFT-10-K-0001193125-26-323660"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C24",
+        "text": "MSFT 10-Q contains 88 AI-related tokens (26.3 per 10,000 words).",
+        "evidence_ids": [
+          "SEC-MSFT-10-Q-0001193125-26-191507"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C25",
+        "text": "META: Palantir Stock Leads August Rally -- Nvidia, Salesforce and Super Micro Jump [positive; earnings_financials]",
+        "evidence_ids": [
+          "NEWS-META-68783d5edaa0"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C26",
+        "text": "META: Jim Cramer Says Meta (META) is \u201cAt the Price\u201d After Settlement Eases Major Legal Overhang [negative; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-META-940aac21ef3c"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C27",
+        "text": "META: Nvidia, Microsoft at Center of $7 Trillion AI Boom [positive; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-META-7745dc75565c"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C28",
+        "text": "META: AMD Is Behind The AI Chip Shift Nobody Is Talking About [neutral; macro_market]",
+        "evidence_ids": [
+          "NEWS-META-a56be29b5c65"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C29",
+        "text": "META: Alphabet May Be the Mag 7 Stock Investors Are Underestimating [neutral; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-META-d8c04ea161e6"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C30",
+        "text": "AAPL: Apple's $54 Billion iPhone Engine Hits an AI Memory Squeeze [negative; earnings_financials]",
+        "evidence_ids": [
+          "NEWS-AAPL-ab132d1f94c8"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C31",
+        "text": "AAPL: Apple's $320 Stock Faces Huawei's 68% Foldable Fortress [positive; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-AAPL-0fbfaaf255bb"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C32",
+        "text": "AAPL: Jim Cramer Wants Nvidia to Buy Back $500 Billion. Can Apple\u2019s Playbook Work? [neutral; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-AAPL-98e33dc16473"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C33",
+        "text": "AMZN: The real danger of black market peptides: Novo Nordisk CEO [neutral; leadership_labor]",
+        "evidence_ids": [
+          "NEWS-AMZN-5fed3966a914"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C34",
+        "text": "AMZN: Scene of Fatal Amazon Plane Crash in Miami Is \u2018Devastating\u2019 [negative; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-AMZN-087289eb5184"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C35",
+        "text": "AMZN: Amazon's 250-Flight Air Network Faces a Fatal Miami Investigation [negative; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-AMZN-9530afb52713"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C36",
+        "text": "AMZN: SoftBank Explodes 11.2% as AI Mania Roars Back Across Asia [positive; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-AMZN-69d3c4bd6fdb"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C37",
+        "text": "AMZN: Is Amazon Stock at $255 a Share an Obvious Buy Right Now? [negative; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-AMZN-01a2db31d003"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C38",
+        "text": "NFLX: Netflix Has Momentum Despite Being Down in 2026. One Analyst\u2019s Price Target Implies 70% Upside [negative; macro_market]",
+        "evidence_ids": [
+          "NEWS-NFLX-b8a6366cdb9c"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C39",
+        "text": "NFLX: Netflix raises UK prices with cheapest plan up by a third [positive; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-NFLX-c272c480ce2a"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C40",
+        "text": "NFLX: Billionaire Bill Ackman Sells Alphabet Stock and Buys a Mega-Cap Stock Down 42% From Its High [negative; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-NFLX-861b0cebab53"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C41",
+        "text": "GOOGL: Weight loss is just the beginning of GLP-1's: Novo Nordisk CEO [neutral; leadership_labor]",
+        "evidence_ids": [
+          "NEWS-GOOGL-21520da8855d"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C42",
+        "text": "GOOGL: Google's AI Slashes Contrail Warming 40% in a Real-World Test [positive; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-GOOGL-a19722b5221d"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C43",
+        "text": "GOOGL: Berkshire Hathaway Owns AI Exposure in 3 Different Ways. Here's Why That's Not the Same as Owning Nvidia. [neutral; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-GOOGL-bb9a54929d80"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C44",
+        "text": "GOOGL: Apple\u2019s new CEO faces a staggering $14 billion iPhone test [neutral; leadership_labor]",
+        "evidence_ids": [
+          "NEWS-GOOGL-952d26452bd0"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C45",
+        "text": "MSFT: Nvidia CEO Says Human-Level AI Is Here. He Sells the Chips. [neutral; ai_capex_cloud]",
+        "evidence_ids": [
+          "NEWS-MSFT-7a4bcf35113e"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C46",
+        "text": "META: How a 64-Year-Old\u2019s $1.2 Million in VOO Turned Into a $456,000 Bet on a Single Sector [neutral; other]",
+        "evidence_ids": [
+          "NEWS-META-0762258e2ed6"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C47",
+        "text": "AAPL: Tim Cook Delivered a 2,720% Total Return Over 15 Years. Here's Whether John Ternus Can Do the Same for Apple Investors. [neutral; other]",
+        "evidence_ids": [
+          "NEWS-AAPL-a1dcd6626d29"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C48",
+        "text": "NFLX: Is Netflix Stock More Likely to Hit $100 or $60 by the End of 2026? [negative; other]",
+        "evidence_ids": [
+          "NEWS-NFLX-99d39485a13b"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C49",
+        "text": "NFLX: Investors Heavily Search Netflix, Inc. (NFLX): Here is What You Need to Know [neutral; other]",
+        "evidence_ids": [
+          "NEWS-NFLX-9c821a376a07"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C50",
+        "text": "NFLX: Netflix Has No Dividend. Here's Why Long-Term Investors Should Own It Anyway. [neutral; other]",
+        "evidence_ids": [
+          "NEWS-NFLX-6ae9d32b48c7"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C51",
+        "text": "GOOGL: Warren Buffett Told CNBC 'I Initiated It' About Berkshire's Alphabet Bet, and New Reporting Says He's Still Calling the Shots on Stocks. Here's What That Means for Reading Greg Abel's Tenure. [neutral; other]",
+        "evidence_ids": [
+          "NEWS-GOOGL-172c3b4e32f0"
+        ],
+        "numeric_values": []
+      },
+      {
+        "claim_id": "C52",
+        "text": "MSFT: Microsoft Has a $1,000 Problem With Its Next Xbox [negative; other]",
+        "evidence_ids": [
+          "NEWS-MSFT-2617353783e9"
+        ],
+        "numeric_values": []
+      }
+    ],
+    "catalysts": [
+      "AAPL FY2025: revenue growth -2.8%, operating margin 29.8%, FCF margin 26.0%, and capex intensity 2.9%.",
+      "AMZN FY2025: revenue growth 11.8%, operating margin 6.4%, FCF margin 5.6%, and capex intensity 9.2%.",
+      "GOOGL FY2025: revenue growth 8.7%, operating margin 27.4%, FCF margin 22.6%, and capex intensity 10.5%.",
+      "META FY2025: revenue growth 15.7%, operating margin 34.7%, FCF margin 32.7%, and capex intensity 20.0%.",
+      "MSFT FY2026: revenue growth 15.7%, operating margin 44.6%, FCF margin 30.2%, and capex intensity 18.1%.",
+      "NFLX FY2025: revenue growth 6.7%, operating margin 20.6%, FCF margin 20.5%, and capex intensity 1.0%.",
+      "AAPL returned 39.8%, with 25.2% annualized volatility, -13.8% maximum drawdown, and 12.1% excess return versus QQQ.",
+      "GOOGL returned 60.7%, with 32.6% annualized volatility, -21.0% maximum drawdown, and 33.0% excess return versus QQQ.",
+      "META: Palantir Stock Leads August Rally -- Nvidia, Salesforce and Super Micro Jump [positive; earnings_financials]",
+      "META: Nvidia, Microsoft at Center of $7 Trillion AI Boom [positive; ai_capex_cloud]",
+      "AAPL: Apple's $320 Stock Faces Huawei's 68% Foldable Fortress [positive; ai_capex_cloud]",
+      "AMZN: SoftBank Explodes 11.2% as AI Mania Roars Back Across Asia [positive; ai_capex_cloud]",
+      "NFLX: Netflix raises UK prices with cheapest plan up by a third [positive; ai_capex_cloud]",
+      "GOOGL: Google's AI Slashes Contrail Warming 40% in a Real-World Test [positive; ai_capex_cloud]"
+    ],
+    "risks": [
+      "AMZN returned 14.7%, with 34.5% annualized volatility, -21.7% maximum drawdown, and -13.0% excess return versus QQQ.",
+      "META returned -15.8%, with 38.8% annualized volatility, -32.5% maximum drawdown, and -43.5% excess return versus QQQ.",
+      "MSFT returned -0.3%, with 32.4% annualized volatility, -34.5% maximum drawdown, and -28.0% excess return versus QQQ.",
+      "NFLX returned -35.5%, with 35.8% annualized volatility, -46.5% maximum drawdown, and -63.3% excess return versus QQQ.",
+      "META: Jim Cramer Says Meta (META) is \u201cAt the Price\u201d After Settlement Eases Major Legal Overhang [negative; ai_capex_cloud]",
+      "AAPL: Apple's $54 Billion iPhone Engine Hits an AI Memory Squeeze [negative; earnings_financials]",
+      "AMZN: Scene of Fatal Amazon Plane Crash in Miami Is \u2018Devastating\u2019 [negative; ai_capex_cloud]",
+      "AMZN: Amazon's 250-Flight Air Network Faces a Fatal Miami Investigation [negative; ai_capex_cloud]",
+      "AMZN: Is Amazon Stock at $255 a Share an Obvious Buy Right Now? [negative; ai_capex_cloud]",
+      "NFLX: Is Netflix Stock More Likely to Hit $100 or $60 by the End of 2026? [negative; other]",
+      "NFLX: Netflix Has Momentum Despite Being Down in 2026. One Analyst\u2019s Price Target Implies 70% Upside [negative; macro_market]",
+      "NFLX: Billionaire Bill Ackman Sells Alphabet Stock and Buys a Mega-Cap Stock Down 42% From Its High [negative; ai_capex_cloud]",
+      "MSFT: Microsoft Has a $1,000 Problem With Its Next Xbox [negative; other]"
+    ],
+    "divergences": [
+      "AAPL has both positive and negative evidence across sources.",
+      "AMZN has both positive and negative evidence across sources.",
+      "META has both positive and negative evidence across sources.",
+      "MSFT has both positive and negative evidence across sources.",
+      "NFLX has both positive and negative evidence across sources."
+    ],
+    "unknowns": [
+      "Descriptive association; not causal attribution",
+      "FCF is operating cash flow minus capital expenditures",
+      "Headline and supplied summary only; full article was not ingested",
+      "Token frequency measures emphasis, not economic value",
+      "Add explicit source-type separation and uncertainty language"
+    ],
+    "confidence": 0.9,
+    "disclaimer": "Educational research only; this report is not investment advice and does not establish causation or predict future returns.",
+    "revision": 1
+  },
+  "evaluations": [
+    {
+      "decision": "revise",
+      "total_score": 100.0,
+      "citation_coverage": 1.0,
+      "numeric_consistency": 1.0,
+      "groundedness": 1.0,
+      "analytical_balance": 1.0,
+      "freshness": 1.0,
+      "question_coverage": 1.0,
+      "style_uncertainty": 1.0,
+      "critical_issues": [],
+      "feedback": [
+        "Add explicit source-type separation and uncertainty language"
+      ]
+    },
+    {
+      "decision": "accept",
+      "total_score": 100.0,
+      "citation_coverage": 1.0,
+      "numeric_consistency": 1.0,
+      "groundedness": 1.0,
+      "analytical_balance": 1.0,
+      "freshness": 1.0,
+      "question_coverage": 1.0,
+      "style_uncertainty": 1.0,
+      "critical_issues": [],
+      "feedback": []
+    }
+  ],
+  "revision_count": 1,
+  "memory_used": [],
+  "fallback_lookups": 3,
+  "warnings": [],
+  "run_id": "546c29874cc94f64",
+  "plan_override": [
+    {
+      "step_id": "P1",
+      "objective": "Collect and normalize primary-source financial evidence",
+      "agent": "filing_specialist",
+      "candidate_tools": [
+        "sec_companyfacts",
+        "sec_filing_text",
+        "validated_memory"
+      ],
+      "selected_tool": "sec_companyfacts",
+      "dependencies": [],
+      "success_criteria": "Every displayed metric has a period, concept, accession, and URL",
+      "fallback": "Use cached SEC snapshot and report non-comparable concepts",
+      "status": "pending"
+    },
+    {
+      "step_id": "P2",
+      "objective": "Run the five-stage news chain",
+      "agent": "news_specialist",
+      "candidate_tools": [
+        "yahoo_news",
+        "news_chain"
+      ],
+      "selected_tool": "news_chain",
+      "dependencies": [
+        "P1"
+      ],
+      "success_criteria": "Every accepted summary completes all five stages",
+      "fallback": "Use cached metadata and lexical classification",
+      "status": "pending"
+    },
+    {
+      "step_id": "P3",
+      "objective": "Measure risk, return, and benchmark-relative confirmation",
+      "agent": "market_specialist",
+      "candidate_tools": [
+        "yahoo_prices",
+        "market_analytics"
+      ],
+      "selected_tool": "market_analytics",
+      "dependencies": [
+        "P1"
+      ],
+      "success_criteria": "Common-window prices and QQQ benchmark are present",
+      "fallback": "Use frozen price snapshot and disclose missing dates",
+      "status": "pending"
+    },
+    {
+      "step_id": "P4",
+      "objective": "Compare FAANG+M AI narrative",
+      "agent": "narrative_specialist",
+      "candidate_tools": [
+        "narrative_comparison"
+      ],
+      "selected_tool": "narrative_comparison",
+      "dependencies": [
+        "P1"
+      ],
+      "success_criteria": "Narrative comparison is complete and FAANG+M AI narrative is compared",
+      "fallback": "Use cached narrative data and compare against the latest available information",
+      "status": "pending"
+    },
+    {
+      "step_id": "P5",
+      "objective": "Synthesize, evaluate, and revise the evidence-linked report",
+      "agent": "supervisor",
+      "candidate_tools": [
+        "synthesizer",
+        "evaluator",
+        "memory"
+      ],
+      "selected_tool": "evaluator_optimizer",
+      "dependencies": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ],
+      "success_criteria": "No critical unsupported claim and all objectives addressed",
+      "fallback": "Deliver a marked partial report with failed checks",
+      "status": "pending"
+    }
+  ],
+  "sentiment_overrides": {
+    "NEWS-META-68783d5edaa0": "positive",
+    "NEWS-META-0762258e2ed6": "neutral",
+    "NEWS-META-940aac21ef3c": "negative",
+    "NEWS-META-7745dc75565c": "positive",
+    "NEWS-META-a56be29b5c65": "neutral",
+    "NEWS-META-d8c04ea161e6": "neutral",
+    "NEWS-AAPL-68783d5edaa0": "positive",
+    "NEWS-AAPL-ab132d1f94c8": "negative",
+    "NEWS-AAPL-a1dcd6626d29": "neutral",
+    "NEWS-AAPL-0fbfaaf255bb": "positive",
+    "NEWS-AAPL-0762258e2ed6": "neutral",
+    "NEWS-AAPL-98e33dc16473": "neutral",
+    "NEWS-AMZN-5fed3966a914": "neutral",
+    "NEWS-AMZN-087289eb5184": "negative",
+    "NEWS-AMZN-9530afb52713": "negative",
+    "NEWS-AMZN-69d3c4bd6fdb": "positive",
+    "NEWS-AMZN-0762258e2ed6": "neutral",
+    "NEWS-AMZN-01a2db31d003": "negative",
+    "NEWS-NFLX-99d39485a13b": "negative",
+    "NEWS-NFLX-9c821a376a07": "neutral",
+    "NEWS-NFLX-b8a6366cdb9c": "negative",
+    "NEWS-NFLX-6ae9d32b48c7": "neutral",
+    "NEWS-NFLX-c272c480ce2a": "positive",
+    "NEWS-NFLX-861b0cebab53": "negative",
+    "NEWS-GOOGL-21520da8855d": "neutral",
+    "NEWS-GOOGL-172c3b4e32f0": "neutral",
+    "NEWS-GOOGL-a19722b5221d": "positive",
+    "NEWS-GOOGL-7745dc75565c": "positive",
+    "NEWS-GOOGL-bb9a54929d80": "neutral",
+    "NEWS-GOOGL-952d26452bd0": "neutral",
+    "NEWS-MSFT-21520da8855d": "neutral",
+    "NEWS-MSFT-68783d5edaa0": "positive",
+    "NEWS-MSFT-0762258e2ed6": "neutral",
+    "NEWS-MSFT-7a4bcf35113e": "neutral",
+    "NEWS-MSFT-7745dc75565c": "positive",
+    "NEWS-MSFT-2617353783e9": "negative"
+  },
+  "tool_trace": [
+    {
+      "tool": "market_analytics",
+      "started_at": "2026-09-07T23:47:51.929417Z",
+      "ended_at": "2026-09-07T23:47:52.001186Z",
+      "success": true,
+      "record_count": 7,
+      "cache_hit": true,
+      "retry_count": 0,
+      "evidence_ids": [],
+      "error": null
+    },
+    {
+      "tool": "narrative_comparison",
+      "started_at": "2026-09-07T23:47:51.929417Z",
+      "ended_at": "2026-09-07T23:47:52.001186Z",
+      "success": true,
+      "record_count": 52,
+      "cache_hit": true,
+      "retry_count": 0,
+      "evidence_ids": [],
+      "error": null
+    },
+    {
+      "tool": "news_chain",
+      "started_at": "2026-09-07T23:47:51.929417Z",
+      "ended_at": "2026-09-07T23:47:52.001186Z",
+      "success": true,
+      "record_count": 140,
+      "cache_hit": true,
+      "retry_count": 0,
+      "evidence_ids": [],
+      "error": null
+    },
+    {
+      "tool": "sec_companyfacts",
+      "started_at": "2026-09-07T23:47:51.929417Z",
+      "ended_at": "2026-09-07T23:47:52.001186Z",
+      "success": true,
+      "record_count": 105,
+      "cache_hit": true,
+      "retry_count": 0,
+      "evidence_ids": [],
+      "error": null
+    },
+    {
+      "tool": "evaluator_optimizer",
+      "started_at": "2026-09-07T23:47:52.001967Z",
+      "ended_at": "2026-09-07T23:47:52.068519Z",
+      "success": true,
+      "record_count": 52,
+      "cache_hit": false,
+      "retry_count": 0,
+      "evidence_ids": [],
+      "error": null
+    },
+    {
+      "tool": "evaluator_optimizer",
+      "started_at": "2026-09-07T23:47:52.069513Z",
+      "ended_at": "2026-09-07T23:47:52.135800Z",
+      "success": true,
+      "record_count": 52,
+      "cache_hit": false,
+      "retry_count": 0,
+      "evidence_ids": [],
+      "error": null
+    }
+  ]
+}

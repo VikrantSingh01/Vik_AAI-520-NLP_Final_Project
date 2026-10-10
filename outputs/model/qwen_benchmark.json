@@ -1,0 +1,206 @@
+[
+  {
+    "case": 1,
+    "query": "Compare FAANG+M AI narrative, cash flow, news, and market reaction.",
+    "schema_valid": true,
+    "fallback_used": false,
+    "repair_used": false,
+    "step_count": 5,
+    "selected_tools": [
+      "sec_companyfacts",
+      "news_chain",
+      "market_analytics",
+      "narrative_comparison",
+      "evaluator_optimizer"
+    ],
+    "inference_seconds": 27.597988875000738,
+    "raw": "[\n  {\n    \"step_id\": \"P1\",\n    \"objective\": \"Collect and normalize primary-source financial evidence\",\n    \"agent\": \"filing_specialist\",\n    \"candidate_tools\": [\n      \"sec_companyfacts\",\n      \"sec_filing_text\",\n      \"validated_memory\"\n    ],\n    \"selected_tool\": \"sec_companyfacts\",\n    \"dependencies\": [],\n    \"success_criteria\": \"Every displayed metric has a period, concept, accession, and URL\",\n    \"fallback\": \"Use cached SEC snapshot and report non-comparable concepts\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P2\",\n    \"objective\": \"Run the five-stage news chain\",\n    \"agent\": \"news_specialist\",\n    \"candidate_tools\": [\n      \"yahoo_news\",\n      \"news_chain\"\n    ],\n    \"selected_tool\": \"news_chain\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Every accepted summary completes all five stages\",\n    \"fallback\": \"Use cached metadata and lexical classification\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P3\",\n    \"objective\": \"Measure risk, return, and benchmark-relative confirmation\",\n    \"agent\": \"market_specialist\",\n    \"candidate_tools\": [\n      \"yahoo_prices\",\n      \"market_analytics\"\n    ],\n    \"selected_tool\": \"market_analytics\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Common-window prices and QQQ benchmark are present\",\n    \"fallback\": \"Use frozen price snapshot and disclose missing dates\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P4\",\n    \"objective\": \"Compare FAANG+M AI narrative\",\n    \"agent\": \"narrative_specialist\",\n    \"candidate_tools\": [\n      \"narrative_comparison\"\n    ],\n    \"selected_tool\": \"narrative_comparison\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Narrative comparison is complete and FAANG+M AI narrative is compared\",\n    \"fallback\": \"Use cached narrative data and compare against the latest available information\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P5\",\n    \"objective\": \"Synthesize, evaluate, and revise the evidence-linked report\",\n    \"agent\": \"supervisor\",\n    \"candidate_tools\": [\n      \"synthesizer\",\n      \"evaluator\",\n      \"memory\"\n    ],\n    \"selected_tool\": \"evaluator_optimizer\",\n    \"dependencies\": [\n      \"P1\",\n      \"P2\",\n      \"P3\",\n      \"P4\"\n    ],\n    \"success_criteria\": \"No critical unsupported claim and all objectives addressed\",\n    \"fallback\": \"Deliver a marked partial report with failed checks\",\n    \"status\": \"pending\"\n  }\n]",
+    "error": ""
+  },
+  {
+    "case": 2,
+    "query": "Assess Microsoft's AI investment narrative and financial capacity.",
+    "schema_valid": true,
+    "fallback_used": false,
+    "repair_used": false,
+    "step_count": 3,
+    "selected_tools": [
+      "sec_companyfacts",
+      "news_chain",
+      "evaluator_optimizer"
+    ],
+    "inference_seconds": 13.260447541979374,
+    "raw": "[\n  {\n    \"step_id\": \"P1\",\n    \"objective\": \"Collect and normalize primary-source financial evidence\",\n    \"agent\": \"filing_specialist\",\n    \"candidate_tools\": [\n      \"sec_companyfacts\",\n      \"sec_filing_text\",\n      \"validated_memory\"\n    ],\n    \"selected_tool\": \"sec_companyfacts\",\n    \"dependencies\": [],\n    \"success_criteria\": \"Every displayed metric has a period, concept, accession, and URL\",\n    \"fallback\": \"Use cached SEC snapshot and report non-comparable concepts\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P2\",\n    \"objective\": \"Run the five-stage news chain\",\n    \"agent\": \"news_specialist\",\n    \"candidate_tools\": [\n      \"yahoo_news\",\n      \"news_chain\"\n    ],\n    \"selected_tool\": \"news_chain\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Every accepted summary completes all five stages\",\n    \"fallback\": \"Use cached metadata and lexical classification\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P5\",\n    \"objective\": \"Synthesize, evaluate, and revise the evidence-linked report\",\n    \"agent\": \"supervisor\",\n    \"candidate_tools\": [\n      \"synthesizer\",\n      \"evaluator\",\n      \"memory\"\n    ],\n    \"selected_tool\": \"evaluator_optimizer\",\n    \"dependencies\": [\n      \"P1\",\n      \"P2\"\n    ],\n    \"success_criteria\": \"No critical unsupported claim and all objectives addressed\",\n    \"fallback\": \"Deliver a marked partial report with failed checks\",\n    \"status\": \"pending\"\n  }\n]",
+    "error": ""
+  },
+  {
+    "case": 3,
+    "query": "Compare META and GOOGL regulatory-news risk.",
+    "schema_valid": true,
+    "fallback_used": false,
+    "repair_used": false,
+    "step_count": 5,
+    "selected_tools": [
+      "sec_companyfacts",
+      "news_chain",
+      "market_analytics",
+      "risk_comparison",
+      "evaluator_optimizer"
+    ],
+    "inference_seconds": 21.59869991702726,
+    "raw": "[\n  {\n    \"step_id\": \"P1\",\n    \"objective\": \"Collect and normalize primary-source financial evidence\",\n    \"agent\": \"filing_specialist\",\n    \"candidate_tools\": [\n      \"sec_companyfacts\",\n      \"sec_filing_text\",\n      \"validated_memory\"\n    ],\n    \"selected_tool\": \"sec_companyfacts\",\n    \"dependencies\": [],\n    \"success_criteria\": \"Every displayed metric has a period, concept, accession, and URL\",\n    \"fallback\": \"Use cached SEC snapshot and report non-comparable concepts\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P2\",\n    \"objective\": \"Run the five-stage news chain\",\n    \"agent\": \"news_specialist\",\n    \"candidate_tools\": [\n      \"yahoo_news\",\n      \"news_chain\"\n    ],\n    \"selected_tool\": \"news_chain\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Every accepted summary completes all five stages\",\n    \"fallback\": \"Use cached metadata and lexical classification\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P3\",\n    \"objective\": \"Measure risk, return, and benchmark-relative confirmation\",\n    \"agent\": \"market_specialist\",\n    \"candidate_tools\": [\n      \"yahoo_prices\",\n      \"market_analytics\"\n    ],\n    \"selected_tool\": \"market_analytics\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Common-window prices and QQQ benchmark are present\",\n    \"fallback\": \"Use frozen price snapshot and disclose missing dates\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P4\",\n    \"objective\": \"Compare META and GOOGL regulatory-news risk\",\n    \"agent\": \"evaluator\",\n    \"candidate_tools\": [\n      \"risk_comparison\"\n    ],\n    \"selected_tool\": \"risk_comparison\",\n    \"dependencies\": [\n      \"P2\",\n      \"P3\"\n    ],\n    \"success_criteria\": \"Risk comparison is complete and relevant\",\n    \"fallback\": \"Use default risk comparison tool if available\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P5\",\n    \"objective\": \"Synthesize, evaluate, and revise the evidence-linked report\",\n    \"agent\": \"supervisor\",\n    \"candidate_tools\": [\n      \"synthesizer\",\n      \"evaluator\",\n      \"memory\"\n    ],\n    \"selected_tool\": \"evaluator_optimizer\",\n    \"dependencies\": [\n      \"P1\",\n      \"P2\",\n      \"P3\",\n      \"P4\"\n    ],\n    \"success_criteria\": \"No critical unsupported claim and all objectives addressed\",\n    \"fallback\": \"Deliver a marked partial report with failed checks\",\n    \"status\": \"pending\"\n  }\n]",
+    "error": ""
+  },
+  {
+    "case": 4,
+    "query": "Review AAPL supply-chain news without market analysis.",
+    "schema_valid": true,
+    "fallback_used": false,
+    "repair_used": false,
+    "step_count": 4,
+    "selected_tools": [
+      "sec_companyfacts",
+      "news_chain",
+      "market_analytics",
+      "evaluator_optimizer"
+    ],
+    "inference_seconds": 16.936227166996105,
+    "raw": "[\n  {\n    \"step_id\": \"P1\",\n    \"objective\": \"Collect and normalize primary-source financial evidence\",\n    \"agent\": \"filing_specialist\",\n    \"candidate_tools\": [\n      \"sec_companyfacts\",\n      \"sec_filing_text\",\n      \"validated_memory\"\n    ],\n    \"selected_tool\": \"sec_companyfacts\",\n    \"dependencies\": [],\n    \"success_criteria\": \"Every displayed metric has a period, concept, accession, and URL\",\n    \"fallback\": \"Use cached SEC snapshot and report non-comparable concepts\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P2\",\n    \"objective\": \"Run the five-stage news chain\",\n    \"agent\": \"news_specialist\",\n    \"candidate_tools\": [\n      \"yahoo_news\",\n      \"news_chain\"\n    ],\n    \"selected_tool\": \"news_chain\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Every accepted summary completes all five stages\",\n    \"fallback\": \"Use cached metadata and lexical classification\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P3\",\n    \"objective\": \"Measure risk, return, and benchmark-relative confirmation\",\n    \"agent\": \"market_specialist\",\n    \"candidate_tools\": [\n      \"yahoo_prices\",\n      \"market_analytics\"\n    ],\n    \"selected_tool\": \"market_analytics\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Common-window prices and QQQ benchmark are present\",\n    \"fallback\": \"Use frozen price snapshot and disclose missing dates\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P5\",\n    \"objective\": \"Synthesize, evaluate, and revise the evidence-linked report\",\n    \"agent\": \"supervisor\",\n    \"candidate_tools\": [\n      \"synthesizer\",\n      \"evaluator\",\n      \"memory\"\n    ],\n    \"selected_tool\": \"evaluator_optimizer\",\n    \"dependencies\": [\n      \"P1\",\n      \"P2\",\n      \"P3\"\n    ],\n    \"success_criteria\": \"No critical unsupported claim and all objectives addressed\",\n    \"fallback\": \"Deliver a marked partial report with failed checks\",\n    \"status\": \"pending\"\n  }\n]",
+    "error": ""
+  },
+  {
+    "case": 5,
+    "query": "Analyze AMZN AWS growth and capital investment.",
+    "schema_valid": true,
+    "fallback_used": false,
+    "repair_used": false,
+    "step_count": 4,
+    "selected_tools": [
+      "sec_companyfacts",
+      "financial_analyzer",
+      "capital_investment_analyzer",
+      "evaluator_optimizer"
+    ],
+    "inference_seconds": 17.1319080000103,
+    "raw": "[\n  {\n    \"step_id\": \"P1\",\n    \"objective\": \"Collect and normalize primary-source financial evidence\",\n    \"agent\": \"filing_specialist\",\n    \"candidate_tools\": [\n      \"sec_companyfacts\",\n      \"sec_filing_text\",\n      \"validated_memory\"\n    ],\n    \"selected_tool\": \"sec_companyfacts\",\n    \"dependencies\": [],\n    \"success_criteria\": \"Every displayed metric has a period, concept, accession, and URL\",\n    \"fallback\": \"Use cached SEC snapshot and report non-comparable concepts\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P2\",\n    \"objective\": \"Analyze AMZN AWS growth\",\n    \"agent\": \"analyst\",\n    \"candidate_tools\": [\n      \"financial_analyzer\",\n      \"investor_relations\"\n    ],\n    \"selected_tool\": \"financial_analyzer\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Growth metrics are analyzed and presented\",\n    \"fallback\": \"Investigate alternative sources for growth data\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P3\",\n    \"objective\": \"Analyze AMZN AWS capital investment\",\n    \"agent\": \"analyst\",\n    \"candidate_tools\": [\n      \"capital_investment_analyzer\",\n      \"investor_relations\"\n    ],\n    \"selected_tool\": \"capital_investment_analyzer\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Investment metrics are analyzed and presented\",\n    \"fallback\": \"Investigate alternative sources for investment data\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P4\",\n    \"objective\": \"Synthesize, evaluate, and revise the evidence-linked report\",\n    \"agent\": \"supervisor\",\n    \"candidate_tools\": [\n      \"synthesizer\",\n      \"evaluator\",\n      \"memory\"\n    ],\n    \"selected_tool\": \"evaluator_optimizer\",\n    \"dependencies\": [\n      \"P2\",\n      \"P3\"\n    ],\n    \"success_criteria\": \"No critical unsupported claim and all objectives addressed\",\n    \"fallback\": \"Deliver a marked partial report with failed checks\",\n    \"status\": \"pending\"\n  }\n]",
+    "error": ""
+  },
+  {
+    "case": 6,
+    "query": "Assess NFLX advertising catalysts and content risks.",
+    "schema_valid": true,
+    "fallback_used": false,
+    "repair_used": false,
+    "step_count": 3,
+    "selected_tools": [
+      "sec_companyfacts",
+      "news_chain",
+      "evaluator_optimizer"
+    ],
+    "inference_seconds": 12.971534125012113,
+    "raw": "[\n  {\n    \"step_id\": \"P1\",\n    \"objective\": \"Collect and normalize primary-source financial evidence\",\n    \"agent\": \"filing_specialist\",\n    \"candidate_tools\": [\n      \"sec_companyfacts\",\n      \"sec_filing_text\",\n      \"validated_memory\"\n    ],\n    \"selected_tool\": \"sec_companyfacts\",\n    \"dependencies\": [],\n    \"success_criteria\": \"Every displayed metric has a period, concept, accession, and URL\",\n    \"fallback\": \"Use cached SEC snapshot and report non-comparable concepts\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P2\",\n    \"objective\": \"Run the five-stage news chain\",\n    \"agent\": \"news_specialist\",\n    \"candidate_tools\": [\n      \"yahoo_news\",\n      \"news_chain\"\n    ],\n    \"selected_tool\": \"news_chain\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Every accepted summary completes all five stages\",\n    \"fallback\": \"Use cached metadata and lexical classification\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P5\",\n    \"objective\": \"Synthesize, evaluate, and revise the evidence-linked report\",\n    \"agent\": \"supervisor\",\n    \"candidate_tools\": [\n      \"synthesizer\",\n      \"evaluator\",\n      \"memory\"\n    ],\n    \"selected_tool\": \"evaluator_optimizer\",\n    \"dependencies\": [\n      \"P1\",\n      \"P2\"\n    ],\n    \"success_criteria\": \"No critical unsupported claim and all objectives addressed\",\n    \"fallback\": \"Deliver a marked partial report with failed checks\",\n    \"status\": \"pending\"\n  }\n]",
+    "error": ""
+  },
+  {
+    "case": 7,
+    "query": "Compare all companies on operating margin and capital intensity.",
+    "schema_valid": true,
+    "fallback_used": false,
+    "repair_used": false,
+    "step_count": 5,
+    "selected_tools": [
+      "sec_companyfacts",
+      "news_chain",
+      "market_analytics",
+      "financial_analyzer",
+      "evaluator_optimizer"
+    ],
+    "inference_seconds": 20.643410541000776,
+    "raw": "[\n  {\n    \"step_id\": \"P1\",\n    \"objective\": \"Collect and normalize primary-source financial evidence\",\n    \"agent\": \"filing_specialist\",\n    \"candidate_tools\": [\n      \"sec_companyfacts\",\n      \"sec_filing_text\",\n      \"validated_memory\"\n    ],\n    \"selected_tool\": \"sec_companyfacts\",\n    \"dependencies\": [],\n    \"success_criteria\": \"Every displayed metric has a period, concept, accession, and URL\",\n    \"fallback\": \"Use cached SEC snapshot and report non-comparable concepts\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P2\",\n    \"objective\": \"Run the five-stage news chain\",\n    \"agent\": \"news_specialist\",\n    \"candidate_tools\": [\n      \"yahoo_news\",\n      \"news_chain\"\n    ],\n    \"selected_tool\": \"news_chain\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Every accepted summary completes all five stages\",\n    \"fallback\": \"Use cached metadata and lexical classification\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P3\",\n    \"objective\": \"Measure risk, return, and benchmark-relative confirmation\",\n    \"agent\": \"market_specialist\",\n    \"candidate_tools\": [\n      \"yahoo_prices\",\n      \"market_analytics\"\n    ],\n    \"selected_tool\": \"market_analytics\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Common-window prices and QQQ benchmark are present\",\n    \"fallback\": \"Use frozen price snapshot and disclose missing dates\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P4\",\n    \"objective\": \"Compare operating margin and capital intensity\",\n    \"agent\": \"financial_analyst\",\n    \"candidate_tools\": [\n      \"financial_analyzer\"\n    ],\n    \"selected_tool\": \"financial_analyzer\",\n    \"dependencies\": [\n      \"P1\",\n      \"P2\",\n      \"P3\"\n    ],\n    \"success_criteria\": \"Operating margin and capital intensity metrics are compared\",\n    \"fallback\": \"Use cached financial data and manual comparison\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P5\",\n    \"objective\": \"Synthesize, evaluate, and revise the evidence-linked report\",\n    \"agent\": \"supervisor\",\n    \"candidate_tools\": [\n      \"synthesizer\",\n      \"evaluator\",\n      \"memory\"\n    ],\n    \"selected_tool\": \"evaluator_optimizer\",\n    \"dependencies\": [\n      \"P1\",\n      \"P2\",\n      \"P3\",\n      \"P4\"\n    ],\n    \"success_criteria\": \"No critical unsupported claim and all objectives addressed\",\n    \"fallback\": \"Deliver a marked partial report with failed checks\",\n    \"status\": \"pending\"\n  }\n]",
+    "error": ""
+  },
+  {
+    "case": 8,
+    "query": "Find filing evidence about Alphabet antitrust risk.",
+    "schema_valid": true,
+    "fallback_used": false,
+    "repair_used": false,
+    "step_count": 3,
+    "selected_tools": [
+      "sec_companyfacts",
+      "news_chain",
+      "evaluator_optimizer"
+    ],
+    "inference_seconds": 12.4729825410177,
+    "raw": "[\n  {\n    \"step_id\": \"P1\",\n    \"objective\": \"Collect and normalize primary-source financial evidence\",\n    \"agent\": \"filing_specialist\",\n    \"candidate_tools\": [\n      \"sec_companyfacts\",\n      \"sec_filing_text\",\n      \"validated_memory\"\n    ],\n    \"selected_tool\": \"sec_companyfacts\",\n    \"dependencies\": [],\n    \"success_criteria\": \"Every displayed metric has a period, concept, accession, and URL\",\n    \"fallback\": \"Use cached SEC snapshot and report non-comparable concepts\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P2\",\n    \"objective\": \"Run the five-stage news chain\",\n    \"agent\": \"news_specialist\",\n    \"candidate_tools\": [\n      \"yahoo_news\",\n      \"news_chain\"\n    ],\n    \"selected_tool\": \"news_chain\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Every accepted summary completes all five stages\",\n    \"fallback\": \"Use cached metadata and lexical classification\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P5\",\n    \"objective\": \"Synthesize, evaluate, and revise the evidence-linked report\",\n    \"agent\": \"supervisor\",\n    \"candidate_tools\": [\n      \"synthesizer\",\n      \"evaluator\",\n      \"memory\"\n    ],\n    \"selected_tool\": \"evaluator_optimizer\",\n    \"dependencies\": [\n      \"P1\",\n      \"P2\"\n    ],\n    \"success_criteria\": \"No critical unsupported claim and all objectives addressed\",\n    \"fallback\": \"Deliver a marked partial report with failed checks\",\n    \"status\": \"pending\"\n  }\n]",
+    "error": ""
+  },
+  {
+    "case": 9,
+    "query": "Summarize recent Meta news sentiment.",
+    "schema_valid": true,
+    "fallback_used": false,
+    "repair_used": false,
+    "step_count": 3,
+    "selected_tools": [
+      "sec_companyfacts",
+      "news_chain",
+      "evaluator_optimizer"
+    ],
+    "inference_seconds": 11.864067541988334,
+    "raw": "[\n  {\n    \"step_id\": \"P1\",\n    \"objective\": \"Collect and normalize primary-source financial evidence\",\n    \"agent\": \"filing_specialist\",\n    \"candidate_tools\": [\n      \"sec_companyfacts\",\n      \"sec_filing_text\",\n      \"validated_memory\"\n    ],\n    \"selected_tool\": \"sec_companyfacts\",\n    \"dependencies\": [],\n    \"success_criteria\": \"Every displayed metric has a period, concept, accession, and URL\",\n    \"fallback\": \"Use cached SEC snapshot and report non-comparable concepts\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P2\",\n    \"objective\": \"Run the five-stage news chain\",\n    \"agent\": \"news_specialist\",\n    \"candidate_tools\": [\n      \"yahoo_news\",\n      \"news_chain\"\n    ],\n    \"selected_tool\": \"news_chain\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Every accepted summary completes all five stages\",\n    \"fallback\": \"Use cached metadata and lexical classification\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P5\",\n    \"objective\": \"Synthesize, evaluate, and revise the evidence-linked report\",\n    \"agent\": \"supervisor\",\n    \"candidate_tools\": [\n      \"synthesizer\",\n      \"evaluator\",\n      \"memory\"\n    ],\n    \"selected_tool\": \"evaluator_optimizer\",\n    \"dependencies\": [\n      \"P1\",\n      \"P2\"\n    ],\n    \"success_criteria\": \"No critical unsupported claim and all objectives addressed\",\n    \"fallback\": \"Deliver a marked partial report with failed checks\",\n    \"status\": \"pending\"\n  }\n]",
+    "error": ""
+  },
+  {
+    "case": 10,
+    "query": "Analyze Microsoft market reaction versus QQQ.",
+    "schema_valid": true,
+    "fallback_used": false,
+    "repair_used": false,
+    "step_count": 5,
+    "selected_tools": [
+      "sec_companyfacts",
+      "market_analytics",
+      "market_analytics",
+      "comparison_tool",
+      "evaluator_optimizer"
+    ],
+    "inference_seconds": 20.77596270898357,
+    "raw": "[\n  {\n    \"step_id\": \"P1\",\n    \"objective\": \"Collect and normalize primary-source financial evidence\",\n    \"agent\": \"filing_specialist\",\n    \"candidate_tools\": [\n      \"sec_companyfacts\",\n      \"sec_filing_text\",\n      \"validated_memory\"\n    ],\n    \"selected_tool\": \"sec_companyfacts\",\n    \"dependencies\": [],\n    \"success_criteria\": \"Every displayed metric has a period, concept, accession, and URL\",\n    \"fallback\": \"Use cached SEC snapshot and report non-comparable concepts\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P2\",\n    \"objective\": \"Analyze Microsoft's market reaction\",\n    \"agent\": \"market_specialist\",\n    \"candidate_tools\": [\n      \"yahoo_prices\",\n      \"market_analytics\"\n    ],\n    \"selected_tool\": \"market_analytics\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Microsoft's stock price and QQQ benchmark are present\",\n    \"fallback\": \"Use frozen price snapshot and disclose missing dates\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P3\",\n    \"objective\": \"Measure QQQ's market reaction\",\n    \"agent\": \"market_specialist\",\n    \"candidate_tools\": [\n      \"yahoo_prices\",\n      \"market_analytics\"\n    ],\n    \"selected_tool\": \"market_analytics\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"QQQ's stock price and QQQ benchmark are present\",\n    \"fallback\": \"Use frozen price snapshot and disclose missing dates\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P4\",\n    \"objective\": \"Compare Microsoft's and QQQ's market reactions\",\n    \"agent\": \"evaluator\",\n    \"candidate_tools\": [\n      \"comparison_tool\"\n    ],\n    \"selected_tool\": \"comparison_tool\",\n    \"dependencies\": [\n      \"P2\",\n      \"P3\"\n    ],\n    \"success_criteria\": \"Comparison of Microsoft's and QQQ's market reactions is presented\",\n    \"fallback\": \"Use default comparison method if no tool is available\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P5\",\n    \"objective\": \"Synthesize, evaluate, and revise the evidence-linked report\",\n    \"agent\": \"supervisor\",\n    \"candidate_tools\": [\n      \"synthesizer\",\n      \"evaluator\",\n      \"memory\"\n    ],\n    \"selected_tool\": \"evaluator_optimizer\",\n    \"dependencies\": [\n      \"P2\",\n      \"P3\",\n      \"P4\"\n    ],\n    \"success_criteria\": \"No critical unsupported claim and all objectives addressed\",\n    \"fallback\": \"Deliver a marked partial report with failed checks\",\n    \"status\": \"pending\"\n  }\n]",
+    "error": ""
+  },
+  {
+    "case": 11,
+    "query": "Review Apple and Amazon macro sensitivity to rates.",
+    "schema_valid": false,
+    "fallback_used": true,
+    "repair_used": false,
+    "step_count": 3,
+    "selected_tools": [
+      "sec_companyfacts",
+      "fred",
+      "evaluator_optimizer"
+    ],
+    "inference_seconds": 70.39935341698583,
+    "raw": "[\n  {\n    \"step_id\": \"P1\",\n    \"objective\": \"Collect and normalize primary-source financial evidence\",\n    \"agent\": \"filing_specialist\",\n    \"candidate_tools\": [\n      \"sec_companyfacts\",\n      \"sec_filing_text\",\n      \"validated_memory\"\n    ],\n    \"selected_tool\": \"sec_companyfacts\",\n    \"dependencies\": [],\n    \"success_criteria\": \"Every displayed metric has a period, concept, accession, and URL\",\n    \"fallback\": \"Use cached SEC snapshot and report non-comparable concepts\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P2\",\n    \"objective\": \"Identify relevant macro series for Apple and Amazon\",\n    \"agent\": \"macro_specialist\",\n    \"candidate_tools\": [\n      \"fred\"\n    ],\n    \"selected_tool\": \"fred\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Series IDs, dates, and release context are cited\",\n    \"fallback\": \"Emit macro_context_unavailable and continue\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P3\",\n    \"objective\": \"Retrieve and normalize data for Apple and Amazon from identified macro series\",\n    \"agent\": \"data_normalizer\",\n    \"candidate_tools\": [\n      \"data_fetcher\",\n      \"data_normalizer\"\n    ],\n    \"selected_tool\": \"data_normalizer\",\n    \"dependencies\": [\n      \"P2\"\n    ],\n    \"success_criteria\": \"Data is normalized and ready for analysis\",\n    \"fallback\": \"Report normalization failure and continue with other steps\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P4\",\n    \"objective\": \"Retrieve and normalize data for Apple and Amazon from identified macro series\",\n    \"agent\": \"data_normalizer\",\n    \"candidate_tools\": [\n      \"data_fetcher\",\n      \"data_normalizer\"\n    ],\n    \"selected_tool\": \"data_normalizer\",\n    \"dependencies\": [\n      \"P2\"\n    ],\n    \"success_criteria\": \"Data is normalized and ready for analysis\",\n    \"fallback\": \"Report normalization failure and continue with other steps\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P5\",\n    \"objective\": \"Analyze the normalized data for Apple and Amazon\",\n    \"agent\": \"analyst\",\n    \"candidate_tools\": [\n      \"financial_analyzer\",\n      \"analyst_reporter\"\n    ],\n    \"selected_tool\": \"financial_analyzer\",\n    \"dependencies\": [\n      \"P3\",\n      \"P4\"\n    ],\n    \"success_criteria\": \"The report includes a detailed analysis of Apple and Amazon's performance relative to the macro series\",\n    \"fallback\": \"Generate a summary report without detailed analysis\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P6\",\n    \"objective\": \"Review the analysis for accuracy and completeness\",\n    \"agent\": \"reviewer\",\n    \"candidate_tools\": [\n      \"reviewer_tool\"\n    ],\n    \"selected_tool\": \"reviewer_tool\",\n    \"dependencies\": [\n      \"P5\"\n    ],\n    \"success_criteria\": \"The report is reviewed and approved by the reviewer\",\n    \"fallback\": \"Report review failure and continue with other steps\",\n    \"status\": \"pending\"\n  },\n  {",
+    "error": "Expecting ',' delimiter: line 91 column 6 (char 2677)"
+  },
+  {
+    "case": 12,
+    "query": "Compare FAANG+M and clearly report unsupported conclusions.",
+    "schema_valid": true,
+    "fallback_used": false,
+    "repair_used": false,
+    "step_count": 5,
+    "selected_tools": [
+      "sec_companyfacts",
+      "news_chain",
+      "market_analytics",
+      "synthesizer",
+      "evaluator_optimizer"
+    ],
+    "inference_seconds": 27.92883966601221,
+    "raw": "[\n  {\n    \"step_id\": \"P1\",\n    \"objective\": \"Collect and normalize primary-source financial evidence\",\n    \"agent\": \"filing_specialist\",\n    \"candidate_tools\": [\n      \"sec_companyfacts\",\n      \"sec_filing_text\",\n      \"validated_memory\"\n    ],\n    \"selected_tool\": \"sec_companyfacts\",\n    \"dependencies\": [],\n    \"success_criteria\": \"Every displayed metric has a period, concept, accession, and URL\",\n    \"fallback\": \"Use cached SEC snapshot and report non-comparable concepts\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P2\",\n    \"objective\": \"Run the five-stage news chain\",\n    \"agent\": \"news_specialist\",\n    \"candidate_tools\": [\n      \"yahoo_news\",\n      \"news_chain\"\n    ],\n    \"selected_tool\": \"news_chain\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Every accepted summary completes all five stages\",\n    \"fallback\": \"Use cached metadata and lexical classification\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P3\",\n    \"objective\": \"Measure risk, return, and benchmark-relative confirmation\",\n    \"agent\": \"market_specialist\",\n    \"candidate_tools\": [\n      \"yahoo_prices\",\n      \"market_analytics\"\n    ],\n    \"selected_tool\": \"market_analytics\",\n    \"dependencies\": [\n      \"P1\"\n    ],\n    \"success_criteria\": \"Common-window prices and QQQ benchmark are present\",\n    \"fallback\": \"Use frozen price snapshot and disclose missing dates\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P4\",\n    \"objective\": \"Compare FAANG+M and clearly report unsupported conclusions\",\n    \"agent\": \"evaluator\",\n    \"candidate_tools\": [\n      \"synthesizer\",\n      \"evaluator\",\n      \"memory\"\n    ],\n    \"selected_tool\": \"synthesizer\",\n    \"dependencies\": [\n      \"P1\",\n      \"P2\",\n      \"P3\"\n    ],\n    \"success_criteria\": \"No critical unsupported claim and all objectives addressed\",\n    \"fallback\": \"Deliver a marked partial report with failed checks\",\n    \"status\": \"pending\"\n  },\n  {\n    \"step_id\": \"P5\",\n    \"objective\": \"Synthesize, evaluate, and revise the evidence-linked report\",\n    \"agent\": \"supervisor\",\n    \"candidate_tools\": [\n      \"synthesizer\",\n      \"evaluator\",\n      \"memory\"\n    ],\n    \"selected_tool\": \"evaluator_optimizer\",\n    \"dependencies\": [\n      \"P1\",\n      \"P2\",\n      \"P3\",\n      \"P4\"\n    ],\n    \"success_criteria\": \"No critical unsupported claim and all objectives addressed\",\n    \"fallback\": \"Deliver a marked partial report with failed checks\",\n    \"status\": \"pending\"\n  }\n]",
+    "error": ""
+  }
+]

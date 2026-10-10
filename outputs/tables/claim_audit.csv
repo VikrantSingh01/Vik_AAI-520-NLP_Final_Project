@@ -1,0 +1,53 @@
+claim_id,claim,citation_count,citations_valid,numbers_reconciled
+C01,"AAPL FY2025: revenue growth -2.8%, operating margin 29.8%, FCF margin 26.0%, and capex intensity 2.9%.",1,True,True
+C02,"AMZN FY2025: revenue growth 11.8%, operating margin 6.4%, FCF margin 5.6%, and capex intensity 9.2%.",1,True,True
+C03,"GOOGL FY2025: revenue growth 8.7%, operating margin 27.4%, FCF margin 22.6%, and capex intensity 10.5%.",1,True,True
+C04,"META FY2025: revenue growth 15.7%, operating margin 34.7%, FCF margin 32.7%, and capex intensity 20.0%.",1,True,True
+C05,"MSFT FY2026: revenue growth 15.7%, operating margin 44.6%, FCF margin 30.2%, and capex intensity 18.1%.",1,True,True
+C06,"NFLX FY2025: revenue growth 6.7%, operating margin 20.6%, FCF margin 20.5%, and capex intensity 1.0%.",1,True,True
+C07,"AAPL returned 39.8%, with 25.2% annualized volatility, -13.8% maximum drawdown, and 12.1% excess return versus QQQ.",1,True,True
+C08,"AMZN returned 14.7%, with 34.5% annualized volatility, -21.7% maximum drawdown, and -13.0% excess return versus QQQ.",1,True,True
+C09,"GOOGL returned 60.7%, with 32.6% annualized volatility, -21.0% maximum drawdown, and 33.0% excess return versus QQQ.",1,True,True
+C10,"META returned -15.8%, with 38.8% annualized volatility, -32.5% maximum drawdown, and -43.5% excess return versus QQQ.",1,True,True
+C11,"MSFT returned -0.3%, with 32.4% annualized volatility, -34.5% maximum drawdown, and -28.0% excess return versus QQQ.",1,True,True
+C12,"NFLX returned -35.5%, with 35.8% annualized volatility, -46.5% maximum drawdown, and -63.3% excess return versus QQQ.",1,True,True
+C13,"META 10-K contains 122 AI-related tokens (15.0 per 10,000 words).",1,True,True
+C14,"META 10-Q contains 113 AI-related tokens (17.8 per 10,000 words).",1,True,True
+C15,"AAPL 10-K contains 9 AI-related tokens (2.8 per 10,000 words).",1,True,True
+C16,"AAPL 10-Q contains 7 AI-related tokens (5.1 per 10,000 words).",1,True,True
+C17,"AMZN 10-K contains 52 AI-related tokens (11.7 per 10,000 words).",1,True,True
+C18,"AMZN 10-Q contains 34 AI-related tokens (10.8 per 10,000 words).",1,True,True
+C19,"NFLX 10-K contains 5 AI-related tokens (1.2 per 10,000 words).",1,True,True
+C20,"NFLX 10-Q contains 0 AI-related tokens (0.0 per 10,000 words).",1,True,True
+C21,"GOOGL 10-K contains 99 AI-related tokens (18.0 per 10,000 words).",1,True,True
+C22,"GOOGL 10-Q contains 21 AI-related tokens (6.2 per 10,000 words).",1,True,True
+C23,"MSFT 10-K contains 133 AI-related tokens (26.2 per 10,000 words).",1,True,True
+C24,"MSFT 10-Q contains 88 AI-related tokens (26.3 per 10,000 words).",1,True,True
+C25,"META: Palantir Stock Leads August Rally -- Nvidia, Salesforce and Super Micro Jump [positive; earnings_financials]",1,True,True
+C26,META: Jim Cramer Says Meta (META) is “At the Price” After Settlement Eases Major Legal Overhang [negative; ai_capex_cloud],1,True,True
+C27,"META: Nvidia, Microsoft at Center of $7 Trillion AI Boom [positive; ai_capex_cloud]",1,True,True
+C28,META: AMD Is Behind The AI Chip Shift Nobody Is Talking About [neutral; macro_market],1,True,True
+C29,META: Alphabet May Be the Mag 7 Stock Investors Are Underestimating [neutral; ai_capex_cloud],1,True,True
+C30,AAPL: Apple's $54 Billion iPhone Engine Hits an AI Memory Squeeze [negative; earnings_financials],1,True,True
+C31,AAPL: Apple's $320 Stock Faces Huawei's 68% Foldable Fortress [positive; ai_capex_cloud],1,True,True
+C32,AAPL: Jim Cramer Wants Nvidia to Buy Back $500 Billion. Can Apple’s Playbook Work? [neutral; ai_capex_cloud],1,True,True
+C33,AMZN: The real danger of black market peptides: Novo Nordisk CEO [neutral; leadership_labor],1,True,True
+C34,AMZN: Scene of Fatal Amazon Plane Crash in Miami Is ‘Devastating’ [negative; ai_capex_cloud],1,True,True
+C35,AMZN: Amazon's 250-Flight Air Network Faces a Fatal Miami Investigation [negative; ai_capex_cloud],1,True,True
+C36,AMZN: SoftBank Explodes 11.2% as AI Mania Roars Back Across Asia [positive; ai_capex_cloud],1,True,True
+C37,AMZN: Is Amazon Stock at $255 a Share an Obvious Buy Right Now? [negative; ai_capex_cloud],1,True,True
+C38,NFLX: Netflix Has Momentum Despite Being Down in 2026. One Analyst’s Price Target Implies 70% Upside [negative; macro_market],1,True,True
+C39,NFLX: Netflix raises UK prices with cheapest plan up by a third [positive; ai_capex_cloud],1,True,True
+C40,NFLX: Billionaire Bill Ackman Sells Alphabet Stock and Buys a Mega-Cap Stock Down 42% From Its High [negative; ai_capex_cloud],1,True,True
+C41,GOOGL: Weight loss is just the beginning of GLP-1's: Novo Nordisk CEO [neutral; leadership_labor],1,True,True
+C42,GOOGL: Google's AI Slashes Contrail Warming 40% in a Real-World Test [positive; ai_capex_cloud],1,True,True
+C43,GOOGL: Berkshire Hathaway Owns AI Exposure in 3 Different Ways. Here's Why That's Not the Same as Owning Nvidia. [neutral; ai_capex_cloud],1,True,True
+C44,GOOGL: Apple’s new CEO faces a staggering $14 billion iPhone test [neutral; leadership_labor],1,True,True
+C45,MSFT: Nvidia CEO Says Human-Level AI Is Here. He Sells the Chips. [neutral; ai_capex_cloud],1,True,True
+C46,"META: How a 64-Year-Old’s $1.2 Million in VOO Turned Into a $456,000 Bet on a Single Sector [neutral; other]",1,True,True
+C47,"AAPL: Tim Cook Delivered a 2,720% Total Return Over 15 Years. Here's Whether John Ternus Can Do the Same for Apple Investors. [neutral; other]",1,True,True
+C48,NFLX: Is Netflix Stock More Likely to Hit $100 or $60 by the End of 2026? [negative; other],1,True,True
+C49,"NFLX: Investors Heavily Search Netflix, Inc. (NFLX): Here is What You Need to Know [neutral; other]",1,True,True
+C50,NFLX: Netflix Has No Dividend. Here's Why Long-Term Investors Should Own It Anyway. [neutral; other],1,True,True
+C51,"GOOGL: Warren Buffett Told CNBC 'I Initiated It' About Berkshire's Alphabet Bet, and New Reporting Says He's Still Calling the Shots on Stocks. Here's What That Means for Reading Greg Abel's Tenure. [neutral; other]",1,True,True
+C52,"MSFT: Microsoft Has a $1,000 Problem With Its Next Xbox [negative; other]",1,True,True

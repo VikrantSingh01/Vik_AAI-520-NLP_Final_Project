@@ -1,0 +1,2 @@
+method,chunks,build_seconds,recall_at_1,recall_at_3,recall_at_5,mrr,mean_latency_seconds
+minilm,4484.0,45.71619974999339,0.9166666666666666,1.0,1.0,0.9444444444444443,0.015119586831133347

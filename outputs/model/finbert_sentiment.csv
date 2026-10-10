@@ -1,0 +1,37 @@
+evidence_id,ticker,title,label,positive,negative,neutral
+NEWS-META-68783d5edaa0,META,"Palantir Stock Leads August Rally -- Nvidia, Salesforce and Super Micro Jump",positive,0.7860150933265686,0.1668514758348465,0.0471334271132946
+NEWS-META-0762258e2ed6,META,"How a 64-Year-Old’s $1.2 Million in VOO Turned Into a $456,000 Bet on a Single Sector",neutral,0.04217921197414398,0.03893216699361801,0.9188886284828186
+NEWS-META-940aac21ef3c,META,Jim Cramer Says Meta (META) is “At the Price” After Settlement Eases Major Legal Overhang,negative,0.03158940002322197,0.4863438904285431,0.48206672072410583
+NEWS-META-7745dc75565c,META,"Nvidia, Microsoft at Center of $7 Trillion AI Boom",positive,0.5874930024147034,0.046638283878564835,0.3658687174320221
+NEWS-META-a56be29b5c65,META,AMD Is Behind The AI Chip Shift Nobody Is Talking About,neutral,0.3833577632904053,0.0406353697180748,0.5760068893432617
+NEWS-META-d8c04ea161e6,META,Alphabet May Be the Mag 7 Stock Investors Are Underestimating,neutral,0.06956629455089569,0.1221458837389946,0.8082877993583679
+NEWS-AAPL-68783d5edaa0,AAPL,"Palantir Stock Leads August Rally -- Nvidia, Salesforce and Super Micro Jump",positive,0.7860150933265686,0.1668514758348465,0.0471334271132946
+NEWS-AAPL-ab132d1f94c8,AAPL,Apple's $54 Billion iPhone Engine Hits an AI Memory Squeeze,negative,0.045925501734018326,0.9201328158378601,0.033941689878702164
+NEWS-AAPL-a1dcd6626d29,AAPL,"Tim Cook Delivered a 2,720% Total Return Over 15 Years. Here's Whether John Ternus Can Do the Same for Apple Investors.",neutral,0.2256065160036087,0.016036421060562134,0.758357048034668
+NEWS-AAPL-0fbfaaf255bb,AAPL,Apple's $320 Stock Faces Huawei's 68% Foldable Fortress,positive,0.9330858588218689,0.028580278158187866,0.038333818316459656
+NEWS-AAPL-0762258e2ed6,AAPL,"How a 64-Year-Old’s $1.2 Million in VOO Turned Into a $456,000 Bet on a Single Sector",neutral,0.04217921197414398,0.03893216699361801,0.9188886284828186
+NEWS-AAPL-98e33dc16473,AAPL,Jim Cramer Wants Nvidia to Buy Back $500 Billion. Can Apple’s Playbook Work?,neutral,0.20653823018074036,0.03675907850265503,0.7567027807235718
+NEWS-AMZN-5fed3966a914,AMZN,The real danger of black market peptides: Novo Nordisk CEO,neutral,0.049045491963624954,0.45039936900138855,0.500555157661438
+NEWS-AMZN-087289eb5184,AMZN,Scene of Fatal Amazon Plane Crash in Miami Is ‘Devastating’,negative,0.019286373630166054,0.8574122190475464,0.12330140173435211
+NEWS-AMZN-9530afb52713,AMZN,Amazon's 250-Flight Air Network Faces a Fatal Miami Investigation,negative,0.010473702102899551,0.9459130167961121,0.04361332952976227
+NEWS-AMZN-69d3c4bd6fdb,AMZN,SoftBank Explodes 11.2% as AI Mania Roars Back Across Asia,positive,0.9499174356460571,0.021804988384246826,0.028277598321437836
+NEWS-AMZN-0762258e2ed6,AMZN,"How a 64-Year-Old’s $1.2 Million in VOO Turned Into a $456,000 Bet on a Single Sector",neutral,0.04217921197414398,0.03893216699361801,0.9188886284828186
+NEWS-AMZN-01a2db31d003,AMZN,Is Amazon Stock at $255 a Share an Obvious Buy Right Now?,negative,0.03768583759665489,0.9328838586807251,0.02943030185997486
+NEWS-NFLX-99d39485a13b,NFLX,Is Netflix Stock More Likely to Hit $100 or $60 by the End of 2026?,negative,0.008452093228697777,0.9723028540611267,0.01924508810043335
+NEWS-NFLX-9c821a376a07,NFLX,"Investors Heavily Search Netflix, Inc. (NFLX): Here is What You Need to Know",neutral,0.04721207171678543,0.019694656133651733,0.933093249797821
+NEWS-NFLX-b8a6366cdb9c,NFLX,Netflix Has Momentum Despite Being Down in 2026. One Analyst’s Price Target Implies 70% Upside,negative,0.051548831164836884,0.9278520941734314,0.020599041134119034
+NEWS-NFLX-6ae9d32b48c7,NFLX,Netflix Has No Dividend. Here's Why Long-Term Investors Should Own It Anyway.,neutral,0.38179129362106323,0.011199523694813251,0.6070091128349304
+NEWS-NFLX-c272c480ce2a,NFLX,Netflix raises UK prices with cheapest plan up by a third,positive,0.9386122822761536,0.016993192955851555,0.04439453408122063
+NEWS-NFLX-861b0cebab53,NFLX,Billionaire Bill Ackman Sells Alphabet Stock and Buys a Mega-Cap Stock Down 42% From Its High,negative,0.006715585011988878,0.9671071171760559,0.026177264750003815
+NEWS-GOOGL-21520da8855d,GOOGL,Weight loss is just the beginning of GLP-1's: Novo Nordisk CEO,neutral,0.04884735867381096,0.01637602224946022,0.9347766637802124
+NEWS-GOOGL-172c3b4e32f0,GOOGL,"Warren Buffett Told CNBC 'I Initiated It' About Berkshire's Alphabet Bet, and New Reporting Says He's Still Calling the Shots on Stocks. Here's What That Means for Reading Greg Abel's Tenure.",neutral,0.08174709975719452,0.011751019395887852,0.9065018892288208
+NEWS-GOOGL-a19722b5221d,GOOGL,Google's AI Slashes Contrail Warming 40% in a Real-World Test,positive,0.7461108565330505,0.011156127788126469,0.242732971906662
+NEWS-GOOGL-7745dc75565c,GOOGL,"Nvidia, Microsoft at Center of $7 Trillion AI Boom",positive,0.5874930024147034,0.046638283878564835,0.3658687174320221
+NEWS-GOOGL-bb9a54929d80,GOOGL,Berkshire Hathaway Owns AI Exposure in 3 Different Ways. Here's Why That's Not the Same as Owning Nvidia.,neutral,0.029423052445054054,0.04965558275580406,0.9209214448928833
+NEWS-GOOGL-952d26452bd0,GOOGL,Apple’s new CEO faces a staggering $14 billion iPhone test,neutral,0.20806674659252167,0.15471629798412323,0.6372169852256775
+NEWS-MSFT-21520da8855d,MSFT,Weight loss is just the beginning of GLP-1's: Novo Nordisk CEO,neutral,0.04884735867381096,0.01637602224946022,0.9347766637802124
+NEWS-MSFT-68783d5edaa0,MSFT,"Palantir Stock Leads August Rally -- Nvidia, Salesforce and Super Micro Jump",positive,0.7860150933265686,0.1668514758348465,0.0471334271132946
+NEWS-MSFT-0762258e2ed6,MSFT,"How a 64-Year-Old’s $1.2 Million in VOO Turned Into a $456,000 Bet on a Single Sector",neutral,0.04217921197414398,0.03893216699361801,0.9188886284828186
+NEWS-MSFT-7a4bcf35113e,MSFT,Nvidia CEO Says Human-Level AI Is Here. He Sells the Chips.,neutral,0.04069377854466438,0.03200065344572067,0.9273055195808411
+NEWS-MSFT-7745dc75565c,MSFT,"Nvidia, Microsoft at Center of $7 Trillion AI Boom",positive,0.5874930024147034,0.046638283878564835,0.3658687174320221
+NEWS-MSFT-2617353783e9,MSFT,"Microsoft Has a $1,000 Problem With Its Next Xbox",negative,0.0309673473238945,0.5906050205230713,0.3784275949001312

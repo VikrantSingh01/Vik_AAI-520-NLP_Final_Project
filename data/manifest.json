@@ -1,0 +1,176 @@
+{
+  "created_at": "2026-09-07T23:06:48.551922+00:00",
+  "file_count": 34,
+  "files": [
+    {
+      "path": "data/processed/financial_facts.json",
+      "bytes": 58146,
+      "sha256": "3e97fdc04538b9e7f12bcb5e7857469ae0e67fa0b7144e47babcb2c42c226403"
+    },
+    {
+      "path": "data/processed/prices.csv",
+      "bytes": 34616,
+      "sha256": "3677c0b63d24e3bdbaf7d3b8842f1649c0da70089e3e7687c36b94f368a41ba9"
+    },
+    {
+      "path": "data/processed/source_evidence.json",
+      "bytes": 3565303,
+      "sha256": "e7c5161fba51d3b6eb86ea72f63df3ae312168c619386a651e21ff8498312aed"
+    },
+    {
+      "path": "data/raw/sec/AAPL_10K_0000320193-25-000079.html",
+      "bytes": 1520208,
+      "sha256": "548ae59778cf08ee0f2ee088e7ece20d947076c3c01f74d2d65db4c2777e436a"
+    },
+    {
+      "path": "data/raw/sec/AAPL_10Q_0000320193-26-000020.html",
+      "bytes": 1018210,
+      "sha256": "4ad5bea67cedfa7542d623900355cc8d143ef95c1acc135a597f2eedabdb9177"
+    },
+    {
+      "path": "data/raw/sec/AAPL_companyfacts.json",
+      "bytes": 3789099,
+      "sha256": "73a86c6aedc31f77cac2ea4df5f80f0b3bd7e6eb58bb4e01444fbedf3afb9c43"
+    },
+    {
+      "path": "data/raw/sec/AAPL_submissions.json",
+      "bytes": 164121,
+      "sha256": "7c67278a0c4009db2cfd62ac23fbdb16d935867ad44fdfde9eaef77837386440"
+    },
+    {
+      "path": "data/raw/sec/AMZN_10K_0001018724-26-000004.html",
+      "bytes": 1968342,
+      "sha256": "beb1bfc28558135e76882db0cf36ba72a1ab44e2144fe37534f4da1e120ddb57"
+    },
+    {
+      "path": "data/raw/sec/AMZN_10Q_0001018724-26-000026.html",
+      "bytes": 1591422,
+      "sha256": "d07b8a88fa442c2c55bd65b3f1d336ca16e7d1e9fda831e1063d24adea60e4eb"
+    },
+    {
+      "path": "data/raw/sec/AMZN_companyfacts.json",
+      "bytes": 4477763,
+      "sha256": "e6aadb0da7384597dbd78f74d1379ffb7fd0829a4d2e797b6d7e442b5e1da0d7"
+    },
+    {
+      "path": "data/raw/sec/AMZN_submissions.json",
+      "bytes": 159666,
+      "sha256": "85dcbb0c1a7e7b405532b0f446a754f6f1dbd75e2a18aad3d6560364d763a7ac"
+    },
+    {
+      "path": "data/raw/sec/GOOGL_10K_0001652044-26-000018.html",
+      "bytes": 2616499,
+      "sha256": "c2f6301004f35411a20611c14ff01d80a85c0bcbab6053c80d8cc7f6fc747161"
+    },
+    {
+      "path": "data/raw/sec/GOOGL_10Q_0001652044-26-000071.html",
+      "bytes": 2464133,
+      "sha256": "fecfbc2683f630380b17937278ce3745eca150eb90e21a945fd6b78fe19728c7"
+    },
+    {
+      "path": "data/raw/sec/GOOGL_companyfacts.json",
+      "bytes": 3164517,
+      "sha256": "a017f26ee88cb4a639d1c1ddb06d53b4afe22f0ac89cabec7cd67c88919fe1c5"
+    },
+    {
+      "path": "data/raw/sec/GOOGL_submissions.json",
+      "bytes": 152715,
+      "sha256": "d5c5ad376392b9d38a7d926506f1b0fd34c1c9e2757b97392c863ddaea70e225"
+    },
+    {
+      "path": "data/raw/sec/META_10K_0001628280-26-003942.html",
+      "bytes": 2371750,
+      "sha256": "97d1a65e8f28c8d2878a1f73218b89f8da3be83e6517c5cffdd81845c8ce40be"
+    },
+    {
+      "path": "data/raw/sec/META_10Q_0001628280-26-050705.html",
+      "bytes": 1783894,
+      "sha256": "b294c4f08edb78d0700cb82c86a0141a2cef38e4f1c2bb02b16ff1ce564a8492"
+    },
+    {
+      "path": "data/raw/sec/META_companyfacts.json",
+      "bytes": 2746680,
+      "sha256": "7518e76d6dac2d016e1a3d1dec1cc55ff9ea3bdd58a151b16fcaa067a6c9d94e"
+    },
+    {
+      "path": "data/raw/sec/META_submissions.json",
+      "bytes": 157733,
+      "sha256": "2c11151eea83ce390d096daf3245c56c421ab3695af2cc6e1f59a218fbe6e645"
+    },
+    {
+      "path": "data/raw/sec/MSFT_10K_0001193125-26-323660.html",
+      "bytes": 8585501,
+      "sha256": "4bcf2da2871acc19e32c5a62f36f6d83d6aae03cdc4aaa9a86a9a21ee8223f02"
+    },
+    {
+      "path": "data/raw/sec/MSFT_10Q_0001193125-26-191507.html",
+      "bytes": 7731948,
+      "sha256": "76945a2c148afb8521cff13adcd320e99a8c09bcb1a2541b5d0ed5a2b02adf2d"
+    },
+    {
+      "path": "data/raw/sec/MSFT_companyfacts.json",
+      "bytes": 4881196,
+      "sha256": "f8aae2965b20ad0df44bdf7ccbedf797d275b6b8dc030154a7a311361bb7246f"
+    },
+    {
+      "path": "data/raw/sec/MSFT_submissions.json",
+      "bytes": 183869,
+      "sha256": "1aa98e15dc1b22c59389f1c460daa1fc94388a045e609fe1f5c7079e9345a5d2"
+    },
+    {
+      "path": "data/raw/sec/NFLX_10K_0001065280-26-000034.html",
+      "bytes": 2137739,
+      "sha256": "47f992a70276ea6a071fe82960de58bab9d1bb74b0ca8e0fbd09f03a25187603"
+    },
+    {
+      "path": "data/raw/sec/NFLX_10Q_0001065280-26-000212.html",
+      "bytes": 1815616,
+      "sha256": "3788192096c4b7844008f4803ae0ad64efebc2d0c6fab64b97bc94a728ffb5c2"
+    },
+    {
+      "path": "data/raw/sec/NFLX_companyfacts.json",
+      "bytes": 3592813,
+      "sha256": "00f3449073d90dfa3aec4e384de24b70d92d897f90c67d6bca61f23e33d38634"
+    },
+    {
+      "path": "data/raw/sec/NFLX_submissions.json",
+      "bytes": 161324,
+      "sha256": "8e93cdbe1760c2ee7fe11842349185256415797cc008a5d2e183864c2f9dc0d0"
+    },
+    {
+      "path": "data/raw/yahoo/AAPL_news.json",
+      "bytes": 11684,
+      "sha256": "f5448c31e2dd7e3832cf027902f5a4e9e32c8bb821850e777d6b19fdce68cc38"
+    },
+    {
+      "path": "data/raw/yahoo/AMZN_news.json",
+      "bytes": 12655,
+      "sha256": "bb71d095bd3a62d2aa3fd8d18efc71e95aa9a09295d9efdb62862eb78c5f7333"
+    },
+    {
+      "path": "data/raw/yahoo/GOOGL_news.json",
+      "bytes": 12649,
+      "sha256": "e2ac1d4ac8a07f9c5fe15a711ffcdd6135a5bbed1834c196f53d616f3abcb3e4"
+    },
+    {
+      "path": "data/raw/yahoo/META_news.json",
+      "bytes": 12718,
+      "sha256": "45c87f1afdf15ccd6cd2a74d113352c774e20db8da018316c3e35fca87069a07"
+    },
+    {
+      "path": "data/raw/yahoo/MSFT_news.json",
+      "bytes": 11836,
+      "sha256": "f90b4852536fce451c7360f3a33a18731337fbecbe5805339f4794b151af7b88"
+    },
+    {
+      "path": "data/raw/yahoo/NFLX_news.json",
+      "bytes": 14066,
+      "sha256": "09c458d0c1aa43b91c93bc394072c68956b39a9b9d3743ce9e0232ca8d327b0d"
+    },
+    {
+      "path": "data/raw/yahoo/prices_2025-09-02_2026-09-08.csv",
+      "bytes": 34703,
+      "sha256": "af7f8ea2895391f7ad0bc65005aaaf16327a60c480844ac982210f6f6f6e6f2f"
+    }
+  ]
+}

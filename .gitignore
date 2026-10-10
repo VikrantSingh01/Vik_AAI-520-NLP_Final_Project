@@ -1,0 +1,14 @@
+.DS_Store
+.env
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+.venv/
+__pycache__/
+*.egg-info/
+*.py[cod]
+src/*.egg-info/
+data/raw/
+models/
+outputs/faiss_index/
+outputs/memory/*.sqlite*

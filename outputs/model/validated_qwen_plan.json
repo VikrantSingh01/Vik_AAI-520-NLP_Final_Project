@@ -1,0 +1,84 @@
+[
+  {
+    "step_id": "P1",
+    "objective": "Collect and normalize primary-source financial evidence",
+    "agent": "filing_specialist",
+    "candidate_tools": [
+      "sec_companyfacts",
+      "sec_filing_text",
+      "validated_memory"
+    ],
+    "selected_tool": "sec_companyfacts",
+    "dependencies": [],
+    "success_criteria": "Every displayed metric has a period, concept, accession, and URL",
+    "fallback": "Use cached SEC snapshot and report non-comparable concepts",
+    "status": "pending"
+  },
+  {
+    "step_id": "P2",
+    "objective": "Run the five-stage news chain",
+    "agent": "news_specialist",
+    "candidate_tools": [
+      "yahoo_news",
+      "news_chain"
+    ],
+    "selected_tool": "news_chain",
+    "dependencies": [
+      "P1"
+    ],
+    "success_criteria": "Every accepted summary completes all five stages",
+    "fallback": "Use cached metadata and lexical classification",
+    "status": "pending"
+  },
+  {
+    "step_id": "P3",
+    "objective": "Measure risk, return, and benchmark-relative confirmation",
+    "agent": "market_specialist",
+    "candidate_tools": [
+      "yahoo_prices",
+      "market_analytics"
+    ],
+    "selected_tool": "market_analytics",
+    "dependencies": [
+      "P1"
+    ],
+    "success_criteria": "Common-window prices and QQQ benchmark are present",
+    "fallback": "Use frozen price snapshot and disclose missing dates",
+    "status": "pending"
+  },
+  {
+    "step_id": "P4",
+    "objective": "Compare FAANG+M AI narrative",
+    "agent": "narrative_specialist",
+    "candidate_tools": [
+      "narrative_comparison"
+    ],
+    "selected_tool": "narrative_comparison",
+    "dependencies": [
+      "P1"
+    ],
+    "success_criteria": "Narrative comparison is complete and FAANG+M AI narrative is compared",
+    "fallback": "Use cached narrative data and compare against the latest available information",
+    "status": "pending"
+  },
+  {
+    "step_id": "P5",
+    "objective": "Synthesize, evaluate, and revise the evidence-linked report",
+    "agent": "supervisor",
+    "candidate_tools": [
+      "synthesizer",
+      "evaluator",
+      "memory"
+    ],
+    "selected_tool": "evaluator_optimizer",
+    "dependencies": [
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
+    "success_criteria": "No critical unsupported claim and all objectives addressed",
+    "fallback": "Deliver a marked partial report with failed checks",
+    "status": "pending"
+  }
+]
